@@ -1749,7 +1749,7 @@ IMPORT <VisionPrescription.shex>
 IMPORT <valueset-workflowStatusDescription.shex>
 #imported_end
 #imported_begin
-IMPORT <_datatype.shex>
+IMPORT <=datatype.shex>
 #imported_end
 #imported_begin
 IMPORT <allergyintolerance-abatement.shex>

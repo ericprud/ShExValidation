@@ -14,13 +14,13 @@ IMPORT <string.shex>
 IMPORT <Extension.shex>
 #imported_end
 # Alternative datatype name (for cross version extensions)
-<_datatype> EXTENDS @<Extension> CLOSED {   
+<:datatype> EXTENDS @<Extension> CLOSED {   
 
-    a [fhir:_datatype]?;
+    a [fhir::datatype]?;
     fhir:nodeRole [fhir:treeRoot]?;
 
     fhir:url @<uri> AND
-    	{fhir:value ["http://hl7.org/fhir/StructureDefinition/_datatype"]}; 
+    	{fhir:value ["http://hl7.org/fhir/StructureDefinition/:datatype"]}; 
     fhir:value @<string>  ; 
     ^fhir:extension { a [fhir:Base]}
 
