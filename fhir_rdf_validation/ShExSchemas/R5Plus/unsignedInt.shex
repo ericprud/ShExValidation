@@ -8,9 +8,9 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 IMPORT <integer.shex>
 #imported_end
 # Primitive Type unsignedInt
-<unsignedInt> EXTENDS @<integer> CLOSED {   
+<unsignedInt> CLOSED {   
 
     a [fhir:unsignedInt]?;
-
+    fhir:v xsd:nonNegativeInteger?;  # Primitive value for integer
 }  
 
