@@ -63,11 +63,11 @@ start=@<PractitionerRole> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # practitioner is authorized to 
                                             # perform in these role(s) 
     fhir:practitioner @<Reference> AND {fhir:link 
-    			@<Practitioner> ? }?;  # Practitioner that is able to 
+    			@<Practitioner> ?}?;  # Practitioner that is able to 
                                             # provide the defined services for 
                                             # the organization 
     fhir:organization @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Organization where the roles are 
+    			@<Organization> ?}?;  # Organization where the roles are 
                                             # available 
     fhir:code @<OneOrMore_CodeableConcept>?;  # Roles which this practitioner may 
                                             # perform 

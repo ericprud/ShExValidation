@@ -254,9 +254,9 @@ IMPORT <CoverageEligibilityResponse.shex>
     fhir:product @<CodeableReference>?;     # Product used/provided
     fhir:subject @<Reference> AND {fhir:link 
     			@<Group> OR 
-    			@<Patient> ? };  # Individual service was done for/to
+    			@<Patient> ?};  # Individual service was done for/to
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # Encounter the {{title}} is part of
+    			@<Encounter> ?}?;  # Encounter the {{title}} is part of
     fhir:occurrence @<dateTime>  OR 
     			@<Period>  OR 
     			@<Timing>  ?;  # When {{title}} occurred/is 
@@ -268,11 +268,11 @@ IMPORT <CoverageEligibilityResponse.shex>
     			 @<RelatedPerson> OR 
     			 @<Practitioner> OR 
     			 @<PractitionerRole> OR 
-    			 @<Organization> })  ?;  # Reported rather than primary record
+    			 @<Organization>?})  ?;  # Reported rather than primary record
     fhir:performer @<OneOrMore_Element>?;   # Who performed {{title}} and what 
                                             # they did 
     fhir:location @<Reference> AND {fhir:link 
-    			@<Location> ? }?;  # Where {{title}} occurred
+    			@<Location> ?}?;  # Where {{title}} occurred
     fhir:reason @<OneOrMore_CodeableReference>?;  # Why was {{title}} performed?
     fhir:note @<OneOrMore_Annotation>?;     # Comments made about the event
     fhir:relevantHistory @<OneOrMore_Reference_Provenance>?;  # Key events in history of {{title}}
@@ -288,7 +288,7 @@ IMPORT <CoverageEligibilityResponse.shex>
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? };  # Who performed {{title}}
+    			@<RelatedPerson> ?};  # Who performed {{title}}
 }  
 
 #---------------------- Cardinality Types (OneOrMore) -------------------

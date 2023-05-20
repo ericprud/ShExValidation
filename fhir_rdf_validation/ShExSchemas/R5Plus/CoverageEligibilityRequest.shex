@@ -92,22 +92,22 @@ start=@<CoverageEligibilityRequest> AND {fhir:nodeRole [fhir:treeRoot]}
     	{fhir:v @fhirvs:eligibilityrequest-purpose};  # auth-requirements | benefits | 
                                             # discovery | validation 
     fhir:patient @<Reference> AND {fhir:link 
-    			@<Patient> ? };  # Intended recipient of products and 
+    			@<Patient> ?};  # Intended recipient of products and 
                                             # services 
     fhir:serviced @<date>  OR 
     			@<Period>  ?;  # Estimated date or dates of service
     fhir:created @<dateTime>;               # Creation date
     fhir:enterer @<Reference> AND {fhir:link 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Author
+    			@<PractitionerRole> ?}?;  # Author
     fhir:provider @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Party responsible for the request
+    			@<PractitionerRole> ?}?;  # Party responsible for the request
     fhir:insurer @<Reference> AND {fhir:link 
-    			@<Organization> ? };  # Coverage issuer
+    			@<Organization> ?};  # Coverage issuer
     fhir:facility @<Reference> AND {fhir:link 
-    			@<Location> ? }?;  # Servicing facility
+    			@<Location> ?}?;  # Servicing facility
     fhir:supportingInfo @<OneOrMore_CoverageEligibilityRequest.supportingInfo>?;  # Supporting information
     fhir:insurance @<OneOrMore_CoverageEligibilityRequest.insurance>?;  # Patient insurance information
     fhir:item @<OneOrMore_CoverageEligibilityRequest.item>?;  # Item to be evaluated for eligibiity
@@ -117,7 +117,7 @@ start=@<CoverageEligibilityRequest> AND {fhir:nodeRole [fhir:treeRoot]}
 <CoverageEligibilityRequest.supportingInfo> EXTENDS @<BackboneElement> CLOSED {   
     fhir:sequence @<positiveInt>;           # Information instance identifier
     fhir:information @<Reference> AND {fhir:link 
-    			@<Resource> ? };  # Data to be provided
+    			@<Resource> ?};  # Data to be provided
     fhir:appliesToAll @<boolean>?;          # Applies to all items
 }  
 
@@ -132,12 +132,12 @@ start=@<CoverageEligibilityRequest> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # modifiers 
     fhir:provider @<Reference> AND {fhir:link 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Perfoming practitioner
+    			@<PractitionerRole> ?}?;  # Perfoming practitioner
     fhir:quantity @<Quantity>?;             # Count of products or services
     fhir:unitPrice @<Money>?;               # Fee, charge or cost per item
     fhir:facility @<Reference> AND {fhir:link 
     			@<Location> OR 
-    			@<Organization> ? }?;  # Servicing facility
+    			@<Organization> ?}?;  # Servicing facility
     fhir:diagnosis @<OneOrMore_CoverageEligibilityRequest.item.diagnosis>?;  # Applicable diagnosis
     fhir:detail @<OneOrMore_Reference_Resource>?;  # Product or service details
 }  
@@ -145,14 +145,14 @@ start=@<CoverageEligibilityRequest> AND {fhir:nodeRole [fhir:treeRoot]}
 # Applicable diagnosis
 <CoverageEligibilityRequest.item.diagnosis> EXTENDS @<BackboneElement> CLOSED {   
     fhir:diagnosis @<CodeableConcept>  OR 
-    			(@<Reference>  AND {fhir:link @<Condition> })  ?;  # Nature of illness or problem
+    			(@<Reference>  AND {fhir:link @<Condition>?})  ?;  # Nature of illness or problem
 }  
 
 # Patient insurance information
 <CoverageEligibilityRequest.insurance> EXTENDS @<BackboneElement> CLOSED {   
     fhir:focal @<boolean>?;                 # Applicable coverage
     fhir:coverage @<Reference> AND {fhir:link 
-    			@<Coverage> ? };  # Insurance information
+    			@<Coverage> ?};  # Insurance information
     fhir:businessArrangement @<string>?;    # Additional provider contract number
 }  
 

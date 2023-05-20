@@ -135,7 +135,7 @@ start=@<Ingredient> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:role @<code> AND
     	{fhir:v @fhirvs:ingredient-manufacturer-role}?;  # allowed | possible | actual
     fhir:manufacturer @<Reference> AND {fhir:link 
-    			@<Organization> ? };  # An organization that manufactures 
+    			@<Organization> ?};  # An organization that manufactures 
                                             # this ingredient 
 }  
 

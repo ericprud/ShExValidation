@@ -113,9 +113,9 @@ start=@<QuestionnaireResponse> AND {fhir:nodeRole [fhir:treeRoot]}
     	{fhir:v @fhirvs:questionnaire-answers-status};  # in-progress | completed | amended 
                                             # | entered-in-error | stopped 
     fhir:subject @<Reference> AND {fhir:link 
-    			@<Resource> ? }?;  # The subject of the questions
+    			@<Resource> ?}?;  # The subject of the questions
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # Encounter created as part of
+    			@<Encounter> ?}?;  # Encounter created as part of
     fhir:authored @<dateTime>?;             # Date the answers were gathered
     fhir:author @<Reference> AND {fhir:link 
     			@<Device> OR 
@@ -123,7 +123,7 @@ start=@<QuestionnaireResponse> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # The individual or device that 
+    			@<RelatedPerson> ?}?;  # The individual or device that 
                                             # received and recorded the answers 
     fhir:source @<Reference> AND {fhir:link 
     			@<Device> OR 
@@ -131,7 +131,7 @@ start=@<QuestionnaireResponse> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # The individual or device that 
+    			@<RelatedPerson> ?}?;  # The individual or device that 
                                             # answered the questions 
     fhir:item @<OneOrMore_QuestionnaireResponse.item>?;  # Groups and questions
 }  
@@ -164,7 +164,7 @@ start=@<QuestionnaireResponse> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Attachment>  OR 
     			@<Coding>  OR 
     			@<SimpleQuantity>  OR 
-    			(@<Reference>  AND {fhir:link @<Resource> })  ;  # Single-valued answer to the 
+    			(@<Reference>  AND {fhir:link @<Resource>?})  ;  # Single-valued answer to the 
                                             # question 
     fhir:item @<OneOrMore_QuestionnaireResponse.item>?;  # Child items of question
 }  

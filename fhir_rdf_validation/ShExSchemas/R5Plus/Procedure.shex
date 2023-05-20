@@ -146,7 +146,7 @@ start=@<Procedure> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Location> OR 
     			@<Organization> OR 
     			@<Patient> OR 
-    			@<Practitioner> ? };  # Individual or entity the procedure 
+    			@<Practitioner> ?};  # Individual or entity the procedure 
                                             # was performed on 
     fhir:focus @<Reference> AND {fhir:link 
     			@<CareTeam> OR 
@@ -155,11 +155,11 @@ start=@<Procedure> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Who is the target of the procedure 
+    			@<RelatedPerson> ?}?;  # Who is the target of the procedure 
                                             # when it is not the subject of 
                                             # record only 
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # The Encounter during which this 
+    			@<Encounter> ?}?;  # The Encounter during which this 
                                             # Procedure was created 
     fhir:occurrence @<dateTime>  OR 
     			@<Period>  OR 
@@ -174,17 +174,17 @@ start=@<Procedure> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Who recorded the procedure
+    			@<RelatedPerson> ?}?;  # Who recorded the procedure
     fhir:reported @<boolean>  OR 
     			(@<Reference>  AND {fhir:link @<Patient> OR 
     			 @<RelatedPerson> OR 
     			 @<Practitioner> OR 
     			 @<PractitionerRole> OR 
-    			 @<Organization> })  ?;  # Reported rather than primary record
+    			 @<Organization>?})  ?;  # Reported rather than primary record
     fhir:performer @<OneOrMore_Procedure.performer>?;  # The people who performed the 
                                             # procedure 
     fhir:location @<Reference> AND {fhir:link 
-    			@<Location> ? }?;  # Where the procedure happened
+    			@<Location> ?}?;  # Where the procedure happened
     fhir:reason @<OneOrMore_CodeableReference>?;  # The justification that the 
                                             # procedure was performed 
     fhir:bodySite @<OneOrMore_CodeableConcept>?;  # Target body sites
@@ -207,7 +207,7 @@ start=@<Procedure> AND {fhir:nodeRole [fhir:treeRoot]}
 <Procedure.focalDevice> EXTENDS @<BackboneElement> CLOSED {   
     fhir:action @<CodeableConcept>?;        # Kind of change to device
     fhir:manipulated @<Reference> AND {fhir:link 
-    			@<Device> ? };  # Device that was changed
+    			@<Device> ?};  # Device that was changed
 }  
 
 # The people who performed the procedure
@@ -221,9 +221,9 @@ start=@<Procedure> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? };  # Who performed the procedure
+    			@<RelatedPerson> ?};  # Who performed the procedure
     fhir:onBehalfOf @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Organization the device or 
+    			@<Organization> ?}?;  # Organization the device or 
                                             # practitioner was acting for 
     fhir:period @<Period>?;                 # When the performer performed the 
                                             # procedure 

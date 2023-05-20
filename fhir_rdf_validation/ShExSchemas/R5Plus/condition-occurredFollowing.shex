@@ -44,7 +44,7 @@ IMPORT <MedicationAdministration.shex>
     			 @<Procedure> OR 
     			 @<MedicationAdministration> OR 
     			 @<Immunization> OR 
-    			 @<MedicationUsage> })  ; 
+    			 @<MedicationUsage>?})  ; 
     ^fhir:extension { a [fhir:Condition]}
 
 }  

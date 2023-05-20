@@ -194,8 +194,8 @@ start=@<PlanDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
     			 @<SubstanceDefinition> OR 
     			 @<AdministrableProductDefinition> OR 
     			 @<ManufacturedItemDefinition> OR 
-    			 @<PackagedProductDefinition> })  OR 
-    			(@<canonical>  AND {fhir:link @<EvidenceVariable> })  ?;  # Type of individual the plan 
+    			 @<PackagedProductDefinition>?})  OR 
+    			(@<canonical>  AND {fhir:link @<EvidenceVariable>?})  ?;  # Type of individual the plan 
                                             # definition is focused on 
     fhir:date @<dateTime>?;                 # Date last changed
     fhir:publisher @<string>?;              # Name of the publisher/steward 
@@ -254,7 +254,7 @@ start=@<PlanDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Who or what can participate
+    			@<RelatedPerson> ?}?;  # Who or what can participate
     fhir:role @<CodeableConcept>?;          # E.g. Nurse, Surgeon, Parent
 }  
 
@@ -342,7 +342,7 @@ start=@<PlanDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Who or what can participate
+    			@<RelatedPerson> ?}?;  # Who or what can participate
     fhir:role @<CodeableConcept>?;          # E.g. Nurse, Surgeon, Parent
     fhir:function @<CodeableConcept>?;      # E.g. Author, Reviewer, Witness, 
                                             # etc. 
@@ -373,7 +373,7 @@ start=@<PlanDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # intended performer of the action 
     fhir:goalId @<OneOrMore_id>?;           # What goals this action supports
     fhir:subject @<CodeableConcept>  OR 
-    			(@<Reference>  AND {fhir:link @<Group> })  OR 
+    			(@<Reference>  AND {fhir:link @<Group>?})  OR 
     			@<canonical>  ?;  # Type of individual the action is 
                                             # focused on 
     fhir:trigger @<OneOrMore_TriggerDefinition>?;  # When the action should be triggered
@@ -409,7 +409,7 @@ start=@<PlanDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
     			 @<ObservationDefinition> OR 
     			 @<PlanDefinition> OR 
     			 @<Questionnaire> OR 
-    			 @<SpecimenDefinition> })  OR 
+    			 @<SpecimenDefinition>?})  OR 
     			@<uri>  ?;  # Description of the activity to be 
                                             # performed 
     fhir:transform @<canonical>?;           # Transform to apply the template

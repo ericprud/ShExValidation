@@ -94,12 +94,12 @@ start=@<VerificationResult> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:who @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # The individual or organization 
+    			@<PractitionerRole> ?}?;  # The individual or organization 
                                             # attesting to information 
     fhir:onBehalfOf @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # When the who is asserting on 
+    			@<PractitionerRole> ?}?;  # When the who is asserting on 
                                             # behalf of another (organization or 
                                             # individual) 
     fhir:communicationMethod @<CodeableConcept>?;  # The method by which attested 
@@ -123,7 +123,7 @@ start=@<VerificationResult> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:who @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Reference to the primary source
+    			@<PractitionerRole> ?}?;  # Reference to the primary source
     fhir:type @<OneOrMore_CodeableConcept>?;  # Type of primary source (License 
                                             # Board; Primary Education; 
                                             # Continuing Education; Postal 
@@ -143,7 +143,7 @@ start=@<VerificationResult> AND {fhir:nodeRole [fhir:treeRoot]}
 # Information about the entity validating information
 <VerificationResult.validator> EXTENDS @<BackboneElement> CLOSED {   
     fhir:organization @<Reference> AND {fhir:link 
-    			@<Organization> ? };  # Reference to the organization 
+    			@<Organization> ?};  # Reference to the organization 
                                             # validating information 
     fhir:identityCertificate @<string>?;    # A digital identity certificate 
                                             # associated with the validator 

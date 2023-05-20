@@ -24,7 +24,7 @@ IMPORT <EpisodeOfCare.shex>
 
     fhir:url @<uri> AND
     	{fhir:value ["http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"]}; 
-    fhir:value (@<Reference>  AND {fhir:link @<EpisodeOfCare> })  ; 
+    fhir:value (@<Reference>  AND {fhir:link @<EpisodeOfCare>?})  ; 
     ^fhir:extension { a [fhir:AdverseEvent]} OR 
           {a [fhir:Appointment]} OR 
           {a [fhir:Basic]} OR 

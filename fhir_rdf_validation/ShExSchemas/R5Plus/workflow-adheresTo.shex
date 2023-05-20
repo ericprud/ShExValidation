@@ -43,7 +43,7 @@ IMPORT <OperationDefinition.shex>
     			 @<Measure> OR 
     			 @<OperationDefinition> OR 
     			 @<PlanDefinition> OR 
-    			 @<Questionnaire> })  OR 
+    			 @<Questionnaire>?})  OR 
     			(@<Reference>  AND {fhir:link @<ActivityDefinition> OR 
     			 @<Measure> OR 
     			 @<OperationDefinition> OR 

@@ -55,7 +55,7 @@ IMPORT <CodeableConcept.shex>
     	{fhir:v @fhirvs:fhir-types};  # The type of the required data
     fhir:profile @<OneOrMore_canonical>?;   # The profile of the required data
     fhir:subject @<CodeableConcept>  OR 
-    			(@<Reference>  AND {fhir:link @<Group> })  ?;  # E.g. Patient, Practitioner, 
+    			(@<Reference>  AND {fhir:link @<Group>?})  ?;  # E.g. Patient, Practitioner, 
                                             # RelatedPerson, Organization, 
                                             # Location, Device 
     fhir:mustSupport @<OneOrMore_string>?;  # Indicates specific structure 

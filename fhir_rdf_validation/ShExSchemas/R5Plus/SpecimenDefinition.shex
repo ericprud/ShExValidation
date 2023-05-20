@@ -98,7 +98,7 @@ start=@<SpecimenDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:experimental @<boolean>?;          # If this SpecimenDefinition is not 
                                             # for real usage 
     fhir:subject @<CodeableConcept>  OR 
-    			(@<Reference>  AND {fhir:link @<Group> })  ?;  # Type of subject for specimen 
+    			(@<Reference>  AND {fhir:link @<Group>?})  ?;  # Type of subject for specimen 
                                             # collection 
     fhir:date @<dateTime>?;                 # Date status first applied
     fhir:publisher @<string>?;              # The name of the individual or 
@@ -177,7 +177,7 @@ start=@<SpecimenDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
 # Additive associated with container
 <SpecimenDefinition.typeTested.container.additive> EXTENDS @<BackboneElement> CLOSED {   
     fhir:additive @<CodeableConcept>  OR 
-    			(@<Reference>  AND {fhir:link @<SubstanceDefinition> })  ;  # Additive associated with container
+    			(@<Reference>  AND {fhir:link @<SubstanceDefinition>?})  ;  # Additive associated with container
 }  
 
 #---------------------- Cardinality Types (OneOrMore) -------------------

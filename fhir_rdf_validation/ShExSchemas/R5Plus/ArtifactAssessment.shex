@@ -78,7 +78,7 @@ start=@<ArtifactAssessment> AND {fhir:nodeRole [fhir:treeRoot]}
 
     fhir:identifier @<OneOrMore_Identifier>?;  # Additional identifier for the 
                                             # artifact assessment 
-    fhir:citeAs (@<Reference>  AND {fhir:link @<Citation> })  OR 
+    fhir:citeAs (@<Reference>  AND {fhir:link @<Citation>?})  OR 
     			@<markdown>  ?;  # How to cite the comment or rating
     fhir:date @<dateTime>?;                 # Date last changed
     fhir:copyright @<markdown>?;            # Use and/or publishing restrictions
@@ -86,7 +86,7 @@ start=@<ArtifactAssessment> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # approved by publisher 
     fhir:lastReviewDate @<date>?;           # When the artifact assessment was 
                                             # last reviewed 
-    fhir:artifact (@<Reference>  AND {fhir:link @<Resource> })  OR 
+    fhir:artifact (@<Reference>  AND {fhir:link @<Resource>?})  OR 
     			@<canonical>  OR 
     			@<uri>  ;  # The artifact assessed, commented 
                                             # upon or rated 
@@ -120,7 +120,7 @@ start=@<ArtifactAssessment> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Organization> OR 
     			@<Patient> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Who authored the content
+    			@<PractitionerRole> ?}?;  # Who authored the content
     fhir:path @<OneOrMore_uri>?;            # What the comment is directed to
     fhir:relatedArtifact @<OneOrMore_RelatedArtifact>?;  # Additional information
     fhir:freeToShare @<boolean>?;           # Acceptable to publicly share the 

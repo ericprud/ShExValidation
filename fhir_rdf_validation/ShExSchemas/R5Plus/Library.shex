@@ -92,7 +92,7 @@ start=@<Library> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # asset-collection | 
                                             # module-definition 
     fhir:subject @<CodeableConcept>  OR 
-    			(@<Reference>  AND {fhir:link @<Group> })  ?;  # Type of individual the library 
+    			(@<Reference>  AND {fhir:link @<Group>?})  ?;  # Type of individual the library 
                                             # content is focused on 
     fhir:date @<dateTime>?;                 # Date last changed
     fhir:publisher @<string>?;              # Name of the publisher/steward 

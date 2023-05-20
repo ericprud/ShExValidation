@@ -156,7 +156,7 @@ start=@<DocumentReference> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # possible) 
     fhir:category @<OneOrMore_CodeableConcept>?;  # Categorization of document
     fhir:subject @<Reference> AND {fhir:link 
-    			@<Resource> ? }?;  # Who/what is the subject of the 
+    			@<Resource> ?}?;  # Who/what is the subject of the 
                                             # document 
     fhir:context @<OneOrMore_Reference_Appointment_OR_Encounter_OR_EpisodeOfCare>?;  # Context of the document content
     fhir:event @<OneOrMore_CodeableReference>?;  # Main clinical acts documented
@@ -173,7 +173,7 @@ start=@<DocumentReference> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # document 
     fhir:attester @<OneOrMore_DocumentReference.attester>?;  # Attests to accuracy of the document
     fhir:custodian @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Organization which maintains the 
+    			@<Organization> ?}?;  # Organization which maintains the 
                                             # document 
     fhir:relatesTo @<OneOrMore_DocumentReference.relatesTo>?;  # Relationships to other documents
     fhir:description @<markdown>?;          # Human-readable description
@@ -191,7 +191,7 @@ start=@<DocumentReference> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Who attested the document
+    			@<RelatedPerson> ?}?;  # Who attested the document
 }  
 
 # Content profile rules for the document
@@ -206,7 +206,7 @@ start=@<DocumentReference> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:code @<CodeableConcept>;           # The relationship type with another 
                                             # document 
     fhir:target @<Reference> AND {fhir:link 
-    			@<DocumentReference> ? };  # Target of the relationship
+    			@<DocumentReference> ?};  # Target of the relationship
 }  
 
 # Document referenced

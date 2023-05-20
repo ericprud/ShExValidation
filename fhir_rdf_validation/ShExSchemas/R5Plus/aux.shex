@@ -2420,7 +2420,7 @@ IMPORT <xhtml.shex>
 			@<Organization> OR 
 			@<Patient> OR 
 			@<Practitioner> OR 
-			@<PractitionerRole> } ;
+			@<PractitionerRole>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Device_OR_HealthcareService_OR_Location_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole> 
 }
 
@@ -2501,7 +2501,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_MedicinalProductDefinition> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<MedicinalProductDefinition> } ;
+			@<MedicinalProductDefinition>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_MedicinalProductDefinition> 
 }
 
@@ -2518,7 +2518,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_ManufacturedItemDefinition> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<ManufacturedItemDefinition> } ;
+			@<ManufacturedItemDefinition>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ManufacturedItemDefinition> 
 }
 
@@ -2544,7 +2544,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_Condition_OR_Observation> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<Condition> OR 
-			@<Observation> } ;
+			@<Observation>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Condition_OR_Observation> 
 }
 
@@ -2561,7 +2561,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_ResearchStudy> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<ResearchStudy> } ;
+			@<ResearchStudy>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ResearchStudy> 
 }
 
@@ -2602,7 +2602,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Appointment> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Appointment> } ;
+			@<Appointment>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Appointment> 
 }
 
@@ -2627,7 +2627,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Resource> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Resource> } ;
+			@<Resource>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Resource> 
 }
 
@@ -2644,7 +2644,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Slot> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Slot> } ;
+			@<Slot>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Slot> 
 }
 
@@ -2661,7 +2661,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Account> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Account> } ;
+			@<Account>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Account> 
 }
 
@@ -2705,7 +2705,7 @@ IMPORT <xhtml.shex>
 			@<CarePlan> OR 
 			@<DeviceRequest> OR 
 			@<MedicationRequest> OR 
-			@<ServiceRequest> } ;
+			@<ServiceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CarePlan_OR_DeviceRequest_OR_MedicationRequest_OR_ServiceRequest> 
 }
 
@@ -2776,7 +2776,7 @@ IMPORT <xhtml.shex>
 			@<MedicationRequest> OR 
 			@<NutritionOrder> OR 
 			@<ServiceRequest> OR 
-			@<Task> } ;
+			@<Task>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CarePlan_OR_DeviceRequest_OR_ImmunizationRecommendation_OR_MedicationRequest_OR_NutritionOrder_OR_ServiceRequest_OR_Task> 
 }
 
@@ -2809,7 +2809,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_BiologicallyDerivedProduct> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<BiologicallyDerivedProduct> } ;
+			@<BiologicallyDerivedProduct>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_BiologicallyDerivedProduct> 
 }
 
@@ -2818,7 +2818,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_ServiceRequest> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<ServiceRequest> } ;
+			@<ServiceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ServiceRequest> 
 }
 
@@ -2827,7 +2827,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Organization> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Organization> } ;
+			@<Organization>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Organization> 
 }
 
@@ -2855,7 +2855,7 @@ IMPORT <xhtml.shex>
 			@<CarePlan> OR 
 			@<NutritionOrder> OR 
 			@<RequestOrchestration> OR 
-			@<ServiceRequest> } ;
+			@<ServiceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CarePlan_OR_NutritionOrder_OR_RequestOrchestration_OR_ServiceRequest> 
 }
 
@@ -2864,7 +2864,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_CarePlan> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<CarePlan> } ;
+			@<CarePlan>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CarePlan> 
 }
 
@@ -2895,7 +2895,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam_OR_Device_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -2904,7 +2904,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_CareTeam> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<CareTeam> } ;
+			@<CareTeam>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam> 
 }
 
@@ -2921,7 +2921,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Goal> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Goal> } ;
+			@<Goal>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Goal> 
 }
 
@@ -2937,7 +2937,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam_OR_Device_OR_HealthcareService_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -2962,7 +2962,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_ChargeItem> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<ChargeItem> } ;
+			@<ChargeItem>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ChargeItem> 
 }
 
@@ -3017,7 +3017,7 @@ IMPORT <xhtml.shex>
 			@<HealthcareService> OR 
 			@<Medication> OR 
 			@<PlanDefinition> OR 
-			@<Substance> } ;
+			@<Substance>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ActivityDefinition_OR_Device_OR_DeviceDefinition_OR_HealthcareService_OR_Medication_OR_PlanDefinition_OR_Substance> 
 }
 
@@ -3042,7 +3042,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_ArtifactAssessment> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<ArtifactAssessment> } ;
+			@<ArtifactAssessment>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ArtifactAssessment> 
 }
 
@@ -3052,7 +3052,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_Organization_OR_PractitionerRole> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<Organization> OR 
-			@<PractitionerRole> } ;
+			@<PractitionerRole>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Organization_OR_PractitionerRole> 
 }
 
@@ -3069,7 +3069,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Encounter> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Encounter> } ;
+			@<Encounter>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Encounter> 
 }
 
@@ -3078,7 +3078,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Device> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Device> } ;
+			@<Device>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Device> 
 }
 
@@ -3095,7 +3095,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_CommunicationRequest> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<CommunicationRequest> } ;
+			@<CommunicationRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CommunicationRequest> 
 }
 
@@ -3106,7 +3106,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<Organization> OR 
 			@<Practitioner> OR 
-			@<PractitionerRole> } ;
+			@<PractitionerRole>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Organization_OR_Practitioner_OR_PractitionerRole> 
 }
 
@@ -3124,7 +3124,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_AllergyIntolerance_OR_Condition> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<AllergyIntolerance> OR 
-			@<Condition> } ;
+			@<Condition>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_AllergyIntolerance_OR_Condition> 
 }
 
@@ -3141,7 +3141,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_RiskAssessment> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<RiskAssessment> } ;
+			@<RiskAssessment>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_RiskAssessment> 
 }
 
@@ -3156,7 +3156,7 @@ IMPORT <xhtml.shex>
 			@<Medication> OR 
 			@<MedicinalProductDefinition> OR 
 			@<PlanDefinition> OR 
-			@<Substance> } ;
+			@<Substance>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ActivityDefinition_OR_Device_OR_DeviceDefinition_OR_Medication_OR_MedicinalProductDefinition_OR_PlanDefinition_OR_Substance> 
 }
 
@@ -3173,7 +3173,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Group> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Group> } ;
+			@<Group>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Group> 
 }
 
@@ -3190,7 +3190,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_ClinicalUseDefinition> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<ClinicalUseDefinition> } ;
+			@<ClinicalUseDefinition>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ClinicalUseDefinition> 
 }
 
@@ -3215,7 +3215,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Communication> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Communication> } ;
+			@<Communication>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Communication> 
 }
 
@@ -3242,7 +3242,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam_OR_Device_OR_Endpoint_OR_Group_OR_HealthcareService_OR_Location_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -3260,7 +3260,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam_OR_Device_OR_Endpoint_OR_Group_OR_HealthcareService_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -3276,7 +3276,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Device_OR_Endpoint_OR_HealthcareService_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -3290,7 +3290,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Device_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -3317,7 +3317,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<ClinicalImpression> OR 
 			@<DiagnosticReport> OR 
-			@<Observation> } ;
+			@<Observation>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ClinicalImpression_OR_DiagnosticReport_OR_Observation> 
 }
 
@@ -3332,7 +3332,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam_OR_HealthcareService_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -3344,7 +3344,7 @@ IMPORT <xhtml.shex>
 			@<HealthcareService> OR 
 			@<Organization> OR 
 			@<Patient> OR 
-			@<Practitioner> } ;
+			@<Practitioner>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_HealthcareService_OR_Organization_OR_Patient_OR_Practitioner> 
 }
 
@@ -3388,7 +3388,7 @@ IMPORT <xhtml.shex>
 			@<Consent> OR 
 			@<Contract> OR 
 			@<DocumentReference> OR 
-			@<QuestionnaireResponse> } ;
+			@<QuestionnaireResponse>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Consent_OR_Contract_OR_DocumentReference_OR_QuestionnaireResponse> 
 }
 
@@ -3397,7 +3397,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_DocumentReference> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<DocumentReference> } ;
+			@<DocumentReference>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_DocumentReference> 
 }
 
@@ -3414,7 +3414,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Location> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Location> } ;
+			@<Location>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Location> 
 }
 
@@ -3431,7 +3431,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Provenance> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Provenance> } ;
+			@<Provenance>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Provenance> 
 }
 
@@ -3454,7 +3454,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Device_OR_Group_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -3471,7 +3471,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Contract> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Contract> } ;
+			@<Contract>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Contract> 
 }
 
@@ -3480,7 +3480,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Endpoint> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Endpoint> } ;
+			@<Endpoint>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Endpoint> 
 }
 
@@ -3491,7 +3491,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<Patient> OR 
 			@<Practitioner> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Patient_OR_Practitioner_OR_RelatedPerson> 
 }
 
@@ -3509,7 +3509,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_CarePlan_OR_DeviceRequest> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<CarePlan> OR 
-			@<DeviceRequest> } ;
+			@<DeviceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CarePlan_OR_DeviceRequest> 
 }
 
@@ -3526,7 +3526,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Procedure> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Procedure> } ;
+			@<Procedure>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Procedure> 
 }
 
@@ -3535,7 +3535,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_DeviceRequest> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<DeviceRequest> } ;
+			@<DeviceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_DeviceRequest> 
 }
 
@@ -3561,7 +3561,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_ClaimResponse_OR_Coverage> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<ClaimResponse> OR 
-			@<Coverage> } ;
+			@<Coverage>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ClaimResponse_OR_Coverage> 
 }
 
@@ -3583,7 +3583,7 @@ IMPORT <xhtml.shex>
 			@<Observation> OR 
 			@<Procedure> OR 
 			@<QuestionnaireResponse> OR 
-			@<ServiceRequest> } ;
+			@<ServiceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Claim_OR_DocumentReference_OR_Observation_OR_Procedure_OR_QuestionnaireResponse_OR_ServiceRequest> 
 }
 
@@ -3596,7 +3596,7 @@ IMPORT <xhtml.shex>
 			@<ImmunizationRecommendation> OR 
 			@<MedicationRequest> OR 
 			@<NutritionOrder> OR 
-			@<ServiceRequest> } ;
+			@<ServiceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CarePlan_OR_ImmunizationRecommendation_OR_MedicationRequest_OR_NutritionOrder_OR_ServiceRequest> 
 }
 
@@ -3608,7 +3608,7 @@ IMPORT <xhtml.shex>
 			@<CareTeam> OR 
 			@<Organization> OR 
 			@<Practitioner> OR 
-			@<PractitionerRole> } ;
+			@<PractitionerRole>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam_OR_Organization_OR_Practitioner_OR_PractitionerRole> 
 }
 
@@ -3625,7 +3625,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Specimen> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Specimen> } ;
+			@<Specimen>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Specimen> 
 }
 
@@ -3634,7 +3634,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Observation> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Observation> } ;
+			@<Observation>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Observation> 
 }
 
@@ -3660,7 +3660,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_GenomicStudy_OR_ImagingStudy> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<GenomicStudy> OR 
-			@<ImagingStudy> } ;
+			@<ImagingStudy>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_GenomicStudy_OR_ImagingStudy> 
 }
 
@@ -3673,7 +3673,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -3746,7 +3746,7 @@ IMPORT <xhtml.shex>
 			@<RequestOrchestration> OR 
 			@<ServiceRequest> OR 
 			@<SupplyRequest> OR 
-			@<VisionPrescription> } ;
+			@<VisionPrescription>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Appointment_OR_AppointmentResponse_OR_CarePlan_OR_Claim_OR_CommunicationRequest_OR_Contract_OR_CoverageEligibilityRequest_OR_DeviceRequest_OR_EnrollmentRequest_OR_EpisodeOfCare_OR_ImmunizationRecommendation_OR_MedicationRequest_OR_NutritionOrder_OR_RequestOrchestration_OR_ServiceRequest_OR_SupplyRequest_OR_VisionPrescription> 
 }
 
@@ -3757,7 +3757,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<Appointment> OR 
 			@<Encounter> OR 
-			@<EpisodeOfCare> } ;
+			@<EpisodeOfCare>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Appointment_OR_Encounter_OR_EpisodeOfCare> 
 }
 
@@ -3782,7 +3782,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_EpisodeOfCare> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<EpisodeOfCare> } ;
+			@<EpisodeOfCare>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_EpisodeOfCare> 
 }
 
@@ -3806,7 +3806,7 @@ IMPORT <xhtml.shex>
 			@<RequestOrchestration> OR 
 			@<ServiceRequest> OR 
 			@<SupplyRequest> OR 
-			@<VisionPrescription> } ;
+			@<VisionPrescription>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Appointment_OR_AppointmentResponse_OR_CarePlan_OR_Claim_OR_CommunicationRequest_OR_Contract_OR_CoverageEligibilityRequest_OR_DeviceRequest_OR_EnrollmentRequest_OR_ImmunizationRecommendation_OR_MedicationRequest_OR_NutritionOrder_OR_RequestOrchestration_OR_ServiceRequest_OR_SupplyRequest_OR_VisionPrescription> 
 }
 
@@ -4028,7 +4028,7 @@ IMPORT <xhtml.shex>
 			@<QuestionnaireResponse> OR 
 			@<RiskAssessment> OR 
 			@<SupplyDelivery> OR 
-			@<Transport> } ;
+			@<Transport>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_AuditEvent_OR_ChargeItem_OR_ClaimResponse_OR_ClinicalImpression_OR_Communication_OR_Composition_OR_Consent_OR_Coverage_OR_CoverageEligibilityResponse_OR_DetectedIssue_OR_DeviceUsage_OR_DiagnosticReport_OR_DocumentManifest_OR_DocumentReference_OR_Encounter_OR_EnrollmentResponse_OR_EpisodeOfCare_OR_ExplanationOfBenefit_OR_FamilyMemberHistory_OR_GuidanceResponse_OR_ImagingSelection_OR_ImagingStudy_OR_Immunization_OR_ImmunizationEvaluation_OR_InventoryReport_OR_MedicationAdministration_OR_MedicationDispense_OR_MedicationUsage_OR_NutritionIntake_OR_Observation_OR_PaymentNotice_OR_PaymentReconciliation_OR_Procedure_OR_Provenance_OR_QuestionnaireResponse_OR_RiskAssessment_OR_SupplyDelivery_OR_Transport> 
 }
 
@@ -4072,7 +4072,7 @@ IMPORT <xhtml.shex>
 			@<Device> OR 
 			@<Group> OR 
 			@<Organization> OR 
-			@<Person> } ;
+			@<Person>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Device_OR_Group_OR_Organization_OR_Person> 
 }
 
@@ -4092,7 +4092,7 @@ IMPORT <xhtml.shex>
 			@<Organization> OR 
 			@<Patient> OR 
 			@<Practitioner> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Organization_OR_Patient_OR_Practitioner_OR_RelatedPerson> 
 }
 
@@ -4110,7 +4110,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_ServiceRequest_OR_Task> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<ServiceRequest> OR 
-			@<Task> } ;
+			@<Task>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ServiceRequest_OR_Task> 
 }
 
@@ -4120,7 +4120,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_Practitioner_OR_PractitionerRole> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<Practitioner> OR 
-			@<PractitionerRole> } ;
+			@<PractitionerRole>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Practitioner_OR_PractitionerRole> 
 }
 
@@ -4130,7 +4130,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_DocumentReference_OR_Observation> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<DocumentReference> OR 
-			@<Observation> } ;
+			@<Observation>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_DocumentReference_OR_Observation> 
 }
 
@@ -4145,7 +4145,7 @@ IMPORT <xhtml.shex>
 			@<NutritionOrder> OR 
 			@<Observation> OR 
 			@<RiskAssessment> OR 
-			@<ServiceRequest> } ;
+			@<ServiceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Condition_OR_MedicationRequest_OR_MedicationUsage_OR_NutritionOrder_OR_Observation_OR_RiskAssessment_OR_ServiceRequest> 
 }
 
@@ -4162,7 +4162,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_OperationOutcome> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<OperationOutcome> } ;
+			@<OperationOutcome>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_OperationOutcome> 
 }
 
@@ -4179,7 +4179,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_HealthcareService> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<HealthcareService> } ;
+			@<HealthcareService>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_HealthcareService> 
 }
 
@@ -4208,7 +4208,7 @@ IMPORT <xhtml.shex>
 			@<AppointmentResponse> OR 
 			@<CarePlan> OR 
 			@<ServiceRequest> OR 
-			@<Task> } ;
+			@<Task>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Appointment_OR_AppointmentResponse_OR_CarePlan_OR_ServiceRequest_OR_Task> 
 }
 
@@ -4217,7 +4217,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_ImagingStudy> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<ImagingStudy> } ;
+			@<ImagingStudy>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ImagingStudy> 
 }
 
@@ -4226,7 +4226,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_ImagingSelection> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<ImagingSelection> } ;
+			@<ImagingSelection>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ImagingSelection> 
 }
 
@@ -4246,7 +4246,7 @@ IMPORT <xhtml.shex>
 			@<CarePlan> OR 
 			@<ImmunizationRecommendation> OR 
 			@<MedicationRequest> OR 
-			@<ServiceRequest> } ;
+			@<ServiceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CarePlan_OR_ImmunizationRecommendation_OR_MedicationRequest_OR_ServiceRequest> 
 }
 
@@ -4256,7 +4256,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_Immunization_OR_ImmunizationEvaluation> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<Immunization> OR 
-			@<ImmunizationEvaluation> } ;
+			@<ImmunizationEvaluation>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Immunization_OR_ImmunizationEvaluation> 
 }
 
@@ -4275,7 +4275,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<AdministrableProductDefinition> OR 
 			@<ManufacturedItemDefinition> OR 
-			@<MedicinalProductDefinition> } ;
+			@<MedicinalProductDefinition>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_AdministrableProductDefinition_OR_ManufacturedItemDefinition_OR_MedicinalProductDefinition> 
 }
 
@@ -4301,7 +4301,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_MedicationAdministration_OR_Procedure> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<MedicationAdministration> OR 
-			@<Procedure> } ;
+			@<Procedure>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_MedicationAdministration_OR_Procedure> 
 }
 
@@ -4310,7 +4310,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_MedicationRequest> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<MedicationRequest> } ;
+			@<MedicationRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_MedicationRequest> 
 }
 
@@ -4323,7 +4323,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Location_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -4332,7 +4332,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Medication> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Medication> } ;
+			@<Medication>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Medication> 
 }
 
@@ -4349,7 +4349,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_MedicationKnowledge> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<MedicationKnowledge> } ;
+			@<MedicationKnowledge>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_MedicationKnowledge> 
 }
 
@@ -4365,7 +4365,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam_OR_DeviceDefinition_OR_HealthcareService_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -4375,7 +4375,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_DeviceDefinition_OR_ManufacturedItemDefinition> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<DeviceDefinition> OR 
-			@<ManufacturedItemDefinition> } ;
+			@<ManufacturedItemDefinition>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_DeviceDefinition_OR_ManufacturedItemDefinition> 
 }
 
@@ -4386,7 +4386,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<CarePlan> OR 
 			@<NutritionOrder> OR 
-			@<ServiceRequest> } ;
+			@<ServiceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CarePlan_OR_NutritionOrder_OR_ServiceRequest> 
 }
 
@@ -4397,7 +4397,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<NutritionIntake> OR 
 			@<Observation> OR 
-			@<Procedure> } ;
+			@<Procedure>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_NutritionIntake_OR_Observation_OR_Procedure> 
 }
 
@@ -4406,7 +4406,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_AllergyIntolerance> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<AllergyIntolerance> } ;
+			@<AllergyIntolerance>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_AllergyIntolerance> 
 }
 
@@ -4420,7 +4420,7 @@ IMPORT <xhtml.shex>
 			@<ImmunizationRecommendation> OR 
 			@<MedicationRequest> OR 
 			@<NutritionOrder> OR 
-			@<ServiceRequest> } ;
+			@<ServiceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CarePlan_OR_DeviceRequest_OR_ImmunizationRecommendation_OR_MedicationRequest_OR_NutritionOrder_OR_ServiceRequest> 
 }
 
@@ -4435,7 +4435,7 @@ IMPORT <xhtml.shex>
 			@<MedicationAdministration> OR 
 			@<MedicationDispense> OR 
 			@<MedicationUsage> OR 
-			@<Procedure> } ;
+			@<Procedure>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_GenomicStudy_OR_ImagingStudy_OR_Immunization_OR_MedicationAdministration_OR_MedicationDispense_OR_MedicationUsage_OR_Procedure> 
 }
 
@@ -4449,7 +4449,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -4468,7 +4468,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<MolecularSequence> OR 
 			@<Observation> OR 
-			@<QuestionnaireResponse> } ;
+			@<QuestionnaireResponse>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_MolecularSequence_OR_Observation_OR_QuestionnaireResponse> 
 }
 
@@ -4483,7 +4483,7 @@ IMPORT <xhtml.shex>
 			@<ImagingStudy> OR 
 			@<MolecularSequence> OR 
 			@<Observation> OR 
-			@<QuestionnaireResponse> } ;
+			@<QuestionnaireResponse>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_DocumentReference_OR_GenomicStudy_OR_ImagingSelection_OR_ImagingStudy_OR_MolecularSequence_OR_Observation_OR_QuestionnaireResponse> 
 }
 
@@ -4500,7 +4500,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_SpecimenDefinition> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<SpecimenDefinition> } ;
+			@<SpecimenDefinition>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_SpecimenDefinition> 
 }
 
@@ -4510,7 +4510,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_Device_OR_DeviceDefinition> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<Device> OR 
-			@<DeviceDefinition> } ;
+			@<DeviceDefinition>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Device_OR_DeviceDefinition> 
 }
 
@@ -4536,7 +4536,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_ObservationDefinition_OR_Questionnaire> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<ObservationDefinition> OR 
-			@<Questionnaire> } ;
+			@<Questionnaire>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ObservationDefinition_OR_Questionnaire> 
 }
 
@@ -4560,7 +4560,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam_OR_Device_OR_Group_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -4570,7 +4570,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_CarePlan_OR_ServiceRequest> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<CarePlan> OR 
-			@<ServiceRequest> } ;
+			@<ServiceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CarePlan_OR_ServiceRequest> 
 }
 
@@ -4581,7 +4581,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<MedicationAdministration> OR 
 			@<Observation> OR 
-			@<Procedure> } ;
+			@<Procedure>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_MedicationAdministration_OR_Observation_OR_Procedure> 
 }
 
@@ -4592,7 +4592,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<Composition> OR 
 			@<DiagnosticReport> OR 
-			@<DocumentReference> } ;
+			@<DocumentReference>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Composition_OR_DiagnosticReport_OR_DocumentReference> 
 }
 
@@ -4602,7 +4602,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_Observation_OR_Procedure> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<Observation> OR 
-			@<Procedure> } ;
+			@<Procedure>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Observation_OR_Procedure> 
 }
 
@@ -4657,7 +4657,7 @@ IMPORT <xhtml.shex>
 			@<PlanDefinition> OR 
 			@<Practitioner> OR 
 			@<ResearchStudy> OR 
-			@<SubstanceDefinition> } ;
+			@<SubstanceDefinition>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_ActivityDefinition_OR_BiologicallyDerivedProduct_OR_DeviceDefinition_OR_Ingredient_OR_Location_OR_ManufacturedItemDefinition_OR_MedicinalProductDefinition_OR_NutritionProduct_OR_ObservationDefinition_OR_Organization_OR_PackagedProductDefinition_OR_PlanDefinition_OR_Practitioner_OR_ResearchStudy_OR_SubstanceDefinition> 
 }
 
@@ -4675,7 +4675,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam_OR_Device_OR_Endpoint_OR_HealthcareService_OR_Location_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -4687,7 +4687,7 @@ IMPORT <xhtml.shex>
 			@<CareTeam> OR 
 			@<Group> OR 
 			@<Organization> OR 
-			@<Practitioner> } ;
+			@<Practitioner>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam_OR_Group_OR_Organization_OR_Practitioner> 
 }
 
@@ -4696,7 +4696,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_PlanDefinition> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<PlanDefinition> } ;
+			@<PlanDefinition>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_PlanDefinition> 
 }
 
@@ -4707,7 +4707,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<Location> OR 
 			@<Organization> OR 
-			@<ResearchStudy> } ;
+			@<ResearchStudy>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Location_OR_Organization_OR_ResearchStudy> 
 }
 
@@ -4734,7 +4734,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<Citation> OR 
 			@<DiagnosticReport> OR 
-			@<EvidenceReport> } ;
+			@<EvidenceReport>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Citation_OR_DiagnosticReport_OR_EvidenceReport> 
 }
 
@@ -4751,7 +4751,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_EvidenceVariable> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<EvidenceVariable> } ;
+			@<EvidenceVariable>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_EvidenceVariable> 
 }
 
@@ -4767,7 +4767,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CareTeam_OR_Device_OR_HealthcareService_OR_Location_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 
@@ -4778,7 +4778,7 @@ IMPORT <xhtml.shex>
     rdf:first @<Reference> AND {fhir:link 
 			@<CarePlan> OR 
 			@<MedicationRequest> OR 
-			@<ServiceRequest> } ;
+			@<ServiceRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_CarePlan_OR_MedicationRequest_OR_ServiceRequest> 
 }
 
@@ -4787,7 +4787,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Substance> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Substance> } ;
+			@<Substance>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Substance> 
 }
 
@@ -4804,7 +4804,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Citation> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Citation> } ;
+			@<Citation>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Citation> 
 }
 
@@ -4813,7 +4813,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_SupplyRequest> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<SupplyRequest> } ;
+			@<SupplyRequest>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_SupplyRequest> 
 }
 
@@ -4823,7 +4823,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_Contract_OR_SupplyDelivery> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<Contract> OR 
-			@<SupplyDelivery> } ;
+			@<SupplyDelivery>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Contract_OR_SupplyDelivery> 
 }
 
@@ -4833,7 +4833,7 @@ IMPORT <xhtml.shex>
 <OneOrMore_Reference_HealthcareService_OR_Organization> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
 			@<HealthcareService> OR 
-			@<Organization> } ;
+			@<Organization>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_HealthcareService_OR_Organization> 
 }
 
@@ -4842,7 +4842,7 @@ IMPORT <xhtml.shex>
 
 <OneOrMore_Reference_Task> CLOSED {
     rdf:first @<Reference> AND {fhir:link 
-			@<Task> } ;
+			@<Task>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Task> 
 }
 
@@ -4856,7 +4856,7 @@ IMPORT <xhtml.shex>
 			@<Patient> OR 
 			@<Practitioner> OR 
 			@<PractitionerRole> OR 
-			@<RelatedPerson> } ;
+			@<RelatedPerson>?} ;
     rdf:rest [rdf:nil] OR @<OneOrMore_Reference_Group_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson> 
 }
 

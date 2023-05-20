@@ -73,7 +73,7 @@ start=@<Substance> AND {fhir:nodeRole [fhir:treeRoot]}
 <Substance.ingredient> EXTENDS @<BackboneElement> CLOSED {   
     fhir:quantity @<Ratio>?;                # Optional amount (concentration)
     fhir:substance @<CodeableConcept>  OR 
-    			(@<Reference>  AND {fhir:link @<Substance> })  ;  # A component of the substance
+    			(@<Reference>  AND {fhir:link @<Substance>?})  ;  # A component of the substance
 }  
 
 #---------------------- Cardinality Types (OneOrMore) -------------------

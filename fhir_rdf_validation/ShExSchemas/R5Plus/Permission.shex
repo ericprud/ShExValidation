@@ -83,7 +83,7 @@ start=@<Permission> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # The person or entity that asserts 
+    			@<RelatedPerson> ?}?;  # The person or entity that asserts 
                                             # the permission 
     fhir:date @<OneOrMore_dateTime>?;       # The date that permission was 
                                             # asserted 
@@ -137,7 +137,7 @@ start=@<Permission> AND {fhir:nodeRole [fhir:treeRoot]}
     	{fhir:v @fhirvs:consent-data-meaning};  # instance | related | dependents | 
                                             # authoredby 
     fhir:reference @<Reference> AND {fhir:link 
-    			@<Resource> ? };  # The actual data reference
+    			@<Resource> ?};  # The actual data reference
 }  
 
 # The asserted justification for using the data

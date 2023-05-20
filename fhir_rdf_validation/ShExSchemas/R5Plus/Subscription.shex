@@ -99,7 +99,7 @@ start=@<Subscription> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Entity responsible for 
+    			@<RelatedPerson> ?}?;  # Entity responsible for 
                                             # Subscription changes 
     fhir:reason @<string>?;                 # Description of why this 
                                             # subscription was created 

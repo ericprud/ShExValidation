@@ -75,7 +75,7 @@ start=@<AppointmentResponse> AND {fhir:nodeRole [fhir:treeRoot]}
 
     fhir:identifier @<OneOrMore_Identifier>?;  # External Ids for this item
     fhir:appointment @<Reference> AND {fhir:link 
-    			@<Appointment> ? };  # Appointment this response relates 
+    			@<Appointment> ?};  # Appointment this response relates 
                                             # to 
     fhir:proposedNewTime @<boolean>?;       # Indicator for a counter proposal
     fhir:start @<instant>?;                 # Time from appointment, or 
@@ -92,7 +92,7 @@ start=@<AppointmentResponse> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Person(s), Location, 
+    			@<RelatedPerson> ?}?;  # Person(s), Location, 
                                             # HealthcareService, or Device 
     fhir:participantStatus @<code> AND
     	{fhir:v @fhirvs:participationstatus};  # accepted | declined | tentative | 

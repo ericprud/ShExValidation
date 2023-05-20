@@ -97,14 +97,14 @@ start=@<MolecularSequence> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<Procedure> OR 
-    			@<Substance> ? }?;  # Subject this sequence is 
+    			@<Substance> ?}?;  # Subject this sequence is 
                                             # associated too 
     fhir:specimen @<Reference> AND {fhir:link 
-    			@<Specimen> ? }?;  # Specimen used for sequencing
+    			@<Specimen> ?}?;  # Specimen used for sequencing
     fhir:device @<Reference> AND {fhir:link 
-    			@<Device> ? }?;  # The method for sequencing
+    			@<Device> ?}?;  # The method for sequencing
     fhir:performer @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Who should be responsible for test 
+    			@<Organization> ?}?;  # Who should be responsible for test 
                                             # result 
     fhir:literal @<string>?;                # Sequence that was observed
     fhir:formatted @<OneOrMore_Attachment>?;  # Embedded file or a link (URL) 
@@ -121,7 +121,7 @@ start=@<MolecularSequence> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:chromosome @<CodeableConcept>?;    # Chromosome Identifier
     fhir:sequence @<CodeableConcept>  OR 
     			@<string>  OR 
-    			(@<Reference>  AND {fhir:link @<MolecularSequence> })  ?;  # The reference sequence that 
+    			(@<Reference>  AND {fhir:link @<MolecularSequence>?})  ?;  # The reference sequence that 
                                             # represents the starting sequence 
     fhir:windowStart @<integer>?;           # Start position of the window on 
                                             # the starting sequence 

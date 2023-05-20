@@ -114,10 +114,10 @@ start=@<NutritionOrder> AND {fhir:nodeRole [fhir:treeRoot]}
     	{fhir:v @fhirvs:request-priority}?;  # routine | urgent | asap | stat
     fhir:subject @<Reference> AND {fhir:link 
     			@<Group> OR 
-    			@<Patient> ? };  # Who requires the diet, formula or 
+    			@<Patient> ?};  # Who requires the diet, formula or 
                                             # nutritional supplement 
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # The encounter associated with this 
+    			@<Encounter> ?}?;  # The encounter associated with this 
                                             # nutrition order 
     fhir:supportingInformation @<OneOrMore_Reference_Resource>?;  # Information to support fulfilling 
                                             # of the nutrition order 
@@ -125,7 +125,7 @@ start=@<NutritionOrder> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # was requested 
     fhir:orderer @<Reference> AND {fhir:link 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Who ordered the diet, formula or 
+    			@<PractitionerRole> ?}?;  # Who ordered the diet, formula or 
                                             # nutritional supplement 
     fhir:performer @<OneOrMore_CodeableReference>?;  # Who is desired to perform the 
                                             # administration of what is being 

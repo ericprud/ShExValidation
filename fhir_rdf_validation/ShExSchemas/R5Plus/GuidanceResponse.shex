@@ -86,26 +86,26 @@ start=@<GuidanceResponse> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # failure | entered-in-error 
     fhir:subject @<Reference> AND {fhir:link 
     			@<Group> OR 
-    			@<Patient> ? }?;  # Patient the request was performed 
+    			@<Patient> ?}?;  # Patient the request was performed 
                                             # for 
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # Encounter during which the 
+    			@<Encounter> ?}?;  # Encounter during which the 
                                             # response was returned 
     fhir:occurrenceDateTime @<dateTime>?;   # When the guidance response was 
                                             # processed 
     fhir:performer @<Reference> AND {fhir:link 
-    			@<Device> ? }?;  # Device returning the guidance
+    			@<Device> ?}?;  # Device returning the guidance
     fhir:reason @<OneOrMore_CodeableReference>?;  # Why guidance is needed
     fhir:note @<OneOrMore_Annotation>?;     # Additional notes about the response
     fhir:evaluationMessage @<OneOrMore_Reference_OperationOutcome>?;  # Messages resulting from the 
                                             # evaluation of the artifact or 
                                             # artifacts 
     fhir:outputParameters @<Reference> AND {fhir:link 
-    			@<Parameters> ? }?;  # The output parameters of the 
+    			@<Parameters> ?}?;  # The output parameters of the 
                                             # evaluation, if any 
     fhir:result @<Reference> AND {fhir:link 
     			@<CarePlan> OR 
-    			@<RequestOrchestration> ? }?;  # Proposed actions, if any
+    			@<RequestOrchestration> ?}?;  # Proposed actions, if any
     fhir:dataRequirement @<OneOrMore_DataRequirement>?;  # Additional required data
 }  
 

@@ -59,7 +59,7 @@ start=@<SubscriptionStatus> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # events relevant to this 
                                             # notification 
     fhir:subscription @<Reference> AND {fhir:link 
-    			@<Subscription> ? };  # Reference to the Subscription 
+    			@<Subscription> ?};  # Reference to the Subscription 
                                             # responsible for this notification 
     fhir:topic @<canonical>?;               # Reference to the SubscriptionTopic 
                                             # this notification relates to 
@@ -71,7 +71,7 @@ start=@<SubscriptionStatus> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:eventNumber @<integer64>;          # Event number
     fhir:timestamp @<instant>?;             # The instant this event occurred
     fhir:focus @<Reference> AND {fhir:link 
-    			@<Resource> ? }?;  # The focus of this event
+    			@<Resource> ?}?;  # The focus of this event
     fhir:additionalContext @<OneOrMore_Reference_Resource>?;  # Additional context for this event
 }  
 

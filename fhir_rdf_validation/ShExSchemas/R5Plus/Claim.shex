@@ -128,7 +128,7 @@ start=@<Claim> AND {fhir:nodeRole [fhir:treeRoot]}
     	{fhir:v @fhirvs:claim-use};  # claim | preauthorization | 
                                             # predetermination 
     fhir:patient @<Reference> AND {fhir:link 
-    			@<Patient> ? };  # The recipient of the products and 
+    			@<Patient> ?};  # The recipient of the products and 
                                             # services 
     fhir:billablePeriod @<Period>?;         # Relevant time frame for the claim
     fhir:created @<dateTime>;               # Resource creation date
@@ -136,34 +136,34 @@ start=@<Claim> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Author of the claim
+    			@<RelatedPerson> ?}?;  # Author of the claim
     fhir:insurer @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Target
+    			@<Organization> ?}?;  # Target
     fhir:provider @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Party responsible for the claim
+    			@<PractitionerRole> ?}?;  # Party responsible for the claim
     fhir:priority @<CodeableConcept>?;      # Desired processing urgency
     fhir:fundsReserve @<CodeableConcept>?;  # For whom to reserve funds
     fhir:related @<OneOrMore_Claim.related>?;  # Prior or corollary claims
     fhir:prescription @<Reference> AND {fhir:link 
     			@<DeviceRequest> OR 
     			@<MedicationRequest> OR 
-    			@<VisionPrescription> ? }?;  # Prescription authorizing services 
+    			@<VisionPrescription> ?}?;  # Prescription authorizing services 
                                             # and products 
     fhir:originalPrescription @<Reference> AND {fhir:link 
     			@<DeviceRequest> OR 
     			@<MedicationRequest> OR 
-    			@<VisionPrescription> ? }?;  # Original prescription if 
+    			@<VisionPrescription> ?}?;  # Original prescription if 
                                             # superseded by fulfiller 
     fhir:payee @<Claim.payee>?;             # Recipient of benefits payable
     fhir:referral @<Reference> AND {fhir:link 
-    			@<ServiceRequest> ? }?;  # Treatment referral
+    			@<ServiceRequest> ?}?;  # Treatment referral
     fhir:encounter @<OneOrMore_Reference_Encounter>?;  # Encounters related to this billed 
                                             # item 
     fhir:facility @<Reference> AND {fhir:link 
     			@<Location> OR 
-    			@<Organization> ? }?;  # Servicing facility
+    			@<Organization> ?}?;  # Servicing facility
     fhir:diagnosisRelatedGroup @<CodeableConcept>?;  # Package billing code
     fhir:careTeam @<OneOrMore_Claim.careTeam>?;  # Members of the care team
     fhir:supportingInfo @<OneOrMore_Claim.supportingInfo>?;  # Supporting information
@@ -182,7 +182,7 @@ start=@<Claim> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:type @<OneOrMore_CodeableConcept>?;  # Category of Procedure
     fhir:date @<dateTime>?;                 # When the procedure was performed
     fhir:procedure @<CodeableConcept>  OR 
-    			(@<Reference>  AND {fhir:link @<Procedure> })  ;  # Specific clinical procedure
+    			(@<Reference>  AND {fhir:link @<Procedure>?})  ;  # Specific clinical procedure
     fhir:udi @<OneOrMore_Reference_Device>?;  # Unique device identifier
 }  
 
@@ -198,7 +198,7 @@ start=@<Claim> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<string>  OR 
     			@<Quantity>  OR 
     			@<Attachment>  OR 
-    			(@<Reference>  AND {fhir:link @<Resource> })  OR 
+    			(@<Reference>  AND {fhir:link @<Resource>?})  OR 
     			@<Identifier>  ?;  # Data to be provided
     fhir:reason @<CodeableConcept>?;        # Explanation for the information
 }  
@@ -229,7 +229,7 @@ start=@<Claim> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:date @<date>;                      # When the incident occurred
     fhir:type @<CodeableConcept>?;          # The nature of the accident
     fhir:location @<Address>  OR 
-    			(@<Reference>  AND {fhir:link @<Location> })  ?;  # Where the event occurred
+    			(@<Reference>  AND {fhir:link @<Location>?})  ?;  # Where the event occurred
 }  
 
 # Anatomical location
@@ -245,12 +245,12 @@ start=@<Claim> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # adjudication 
     fhir:identifier @<Identifier>?;         # Pre-assigned Claim number
     fhir:coverage @<Reference> AND {fhir:link 
-    			@<Coverage> ? };  # Insurance information
+    			@<Coverage> ?};  # Insurance information
     fhir:businessArrangement @<string>?;    # Additional provider contract number
     fhir:preAuthRef @<OneOrMore_string>?;   # Prior authorization reference 
                                             # number 
     fhir:claimResponse @<Reference> AND {fhir:link 
-    			@<ClaimResponse> ? }?;  # Adjudication results
+    			@<ClaimResponse> ?}?;  # Adjudication results
 }  
 
 # Product or service provided
@@ -277,7 +277,7 @@ start=@<Claim> AND {fhir:nodeRole [fhir:treeRoot]}
 <Claim.diagnosis> EXTENDS @<BackboneElement> CLOSED {   
     fhir:sequence @<positiveInt>;           # Diagnosis instance identifier
     fhir:diagnosis @<CodeableConcept>  OR 
-    			(@<Reference>  AND {fhir:link @<Condition> })  ;  # Nature of illness or problem
+    			(@<Reference>  AND {fhir:link @<Condition>?})  ;  # Nature of illness or problem
     fhir:type @<OneOrMore_CodeableConcept>?;  # Timing or nature of the diagnosis
     fhir:onAdmission @<CodeableConcept>?;   # Present on admission
 }  
@@ -288,7 +288,7 @@ start=@<Claim> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:provider @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? };  # Practitioner or organization
+    			@<PractitionerRole> ?};  # Practitioner or organization
     fhir:responsible @<boolean>?;           # Indicator of the lead practitioner
     fhir:role @<CodeableConcept>?;          # Function within the team
     fhir:specialty @<CodeableConcept>?;     # Practitioner or provider 
@@ -317,7 +317,7 @@ start=@<Claim> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # product delivery 
     fhir:location @<CodeableConcept>  OR 
     			@<Address>  OR 
-    			(@<Reference>  AND {fhir:link @<Location> })  ?;  # Place of service or where product 
+    			(@<Reference>  AND {fhir:link @<Location>?})  ?;  # Place of service or where product 
                                             # was supplied 
     fhir:patientPaid @<Money>?;             # Paid by the patient
     fhir:quantity @<Quantity>?;             # Count of products or services
@@ -340,13 +340,13 @@ start=@<Claim> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Recipient reference
+    			@<RelatedPerson> ?}?;  # Recipient reference
 }  
 
 # Prior or corollary claims
 <Claim.related> EXTENDS @<BackboneElement> CLOSED {   
     fhir:claim @<Reference> AND {fhir:link 
-    			@<Claim> ? }?;  # Reference to the related claim
+    			@<Claim> ?}?;  # Reference to the related claim
     fhir:relationship @<CodeableConcept>?;  # How the reference claim is related
     fhir:reference @<Identifier>?;          # File or case reference
 }  

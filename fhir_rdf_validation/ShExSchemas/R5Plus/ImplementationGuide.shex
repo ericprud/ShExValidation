@@ -112,7 +112,7 @@ start=@<ImplementationGuide> AND {fhir:nodeRole [fhir:treeRoot]}
 # Resource in the implementation guide
 <ImplementationGuide.manifest.resource> EXTENDS @<BackboneElement> CLOSED {   
     fhir:reference @<Reference> AND {fhir:link 
-    			@<Resource> ? };  # Location of the resource
+    			@<Resource> ?};  # Location of the resource
     fhir:isExample @<boolean>?;             # Is this an example
     fhir:profile @<OneOrMore_canonical>?;   # Profile(s) this is an example of
     fhir:relativePath @<url>?;              # Relative path for page in IG
@@ -121,7 +121,7 @@ start=@<ImplementationGuide> AND {fhir:nodeRole [fhir:treeRoot]}
 # Resource in the implementation guide
 <ImplementationGuide.definition.resource> EXTENDS @<BackboneElement> CLOSED {   
     fhir:reference @<Reference> AND {fhir:link 
-    			@<Resource> ? };  # Location of the resource
+    			@<Resource> ?};  # Location of the resource
     fhir:fhirVersion @<OneOrMore_code> AND
     	{fhir:v @fhirvs:FHIR-version}?;  # Versions this applies to (if 
                                             # different to IG) 

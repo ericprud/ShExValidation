@@ -110,7 +110,7 @@ start=@<DetectedIssue> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<Procedure> OR 
-    			@<Substance> ? }?;  # Associated subject
+    			@<Substance> ?}?;  # Associated subject
     fhir:identified @<dateTime>  OR 
     			@<Period>  ?;  # When identified
     fhir:author @<Reference> AND {fhir:link 
@@ -118,7 +118,7 @@ start=@<DetectedIssue> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # The provider or device that 
+    			@<RelatedPerson> ?}?;  # The provider or device that 
                                             # identified the issue 
     fhir:implicated @<OneOrMore_Reference_Resource>?;  # Problem resource
     fhir:evidence @<OneOrMore_DetectedIssue.evidence>?;  # Supporting evidence
@@ -139,7 +139,7 @@ start=@<DetectedIssue> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:date @<dateTime>?;                 # Date committed
     fhir:author @<Reference> AND {fhir:link 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Who is committing?
+    			@<PractitionerRole> ?}?;  # Who is committing?
 }  
 
 #---------------------- Cardinality Types (OneOrMore) -------------------

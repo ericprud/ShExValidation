@@ -85,7 +85,7 @@ start=@<EventDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:experimental @<boolean>?;          # For testing purposes, not real 
                                             # usage 
     fhir:subject @<CodeableConcept>  OR 
-    			(@<Reference>  AND {fhir:link @<Group> })  ?;  # Type of individual the event 
+    			(@<Reference>  AND {fhir:link @<Group>?})  ?;  # Type of individual the event 
                                             # definition is focused on 
     fhir:date @<dateTime>?;                 # Date last changed
     fhir:publisher @<string>?;              # Name of the publisher/steward 

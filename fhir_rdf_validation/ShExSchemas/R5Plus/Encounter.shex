@@ -132,7 +132,7 @@ start=@<Encounter> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:serviceType @<OneOrMore_CodeableReference>?;  # Specific type of service
     fhir:subject @<Reference> AND {fhir:link 
     			@<Group> OR 
-    			@<Patient> ? }?;  # The patient or group related to 
+    			@<Patient> ?}?;  # The patient or group related to 
                                             # this encounter 
     fhir:subjectStatus @<CodeableConcept>?;  # The current status of the subject 
                                             # in relation to the Encounter 
@@ -144,10 +144,10 @@ start=@<Encounter> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:careTeam @<OneOrMore_Reference_CareTeam>?;  # The group(s) that are allocated to 
                                             # participate in this encounter 
     fhir:partOf @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # Another Encounter this encounter 
+    			@<Encounter> ?}?;  # Another Encounter this encounter 
                                             # is part of 
     fhir:serviceProvider @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # The organization (facility) 
+    			@<Organization> ?}?;  # The organization (facility) 
                                             # responsible for this encounter 
     fhir:participant @<OneOrMore_Encounter.participant>?;  # List of participants involved in 
                                             # the encounter 
@@ -198,7 +198,7 @@ start=@<Encounter> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # The individual, device, or service 
+    			@<RelatedPerson> ?}?;  # The individual, device, or service 
                                             # participating in the encounter 
 }  
 
@@ -218,7 +218,7 @@ start=@<Encounter> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:preAdmissionIdentifier @<Identifier>?;  # Pre-admission identifier
     fhir:origin @<Reference> AND {fhir:link 
     			@<Location> OR 
-    			@<Organization> ? }?;  # The location/organization from 
+    			@<Organization> ?}?;  # The location/organization from 
                                             # which the patient came before 
                                             # admission 
     fhir:admitSource @<CodeableConcept>?;   # From where patient was admitted 
@@ -235,7 +235,7 @@ start=@<Encounter> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # etc. 
     fhir:destination @<Reference> AND {fhir:link 
     			@<Location> OR 
-    			@<Organization> ? }?;  # Location/organization to which the 
+    			@<Organization> ?}?;  # Location/organization to which the 
                                             # patient is discharged 
     fhir:dischargeDisposition @<CodeableConcept>?;  # Category or kind of location after 
                                             # discharge 
@@ -245,7 +245,7 @@ start=@<Encounter> AND {fhir:nodeRole [fhir:treeRoot]}
 <Encounter.diagnosis> EXTENDS @<BackboneElement> CLOSED {   
     fhir:condition @<Reference> AND {fhir:link 
     			@<Condition> OR 
-    			@<Procedure> ? };  # The diagnosis or procedure 
+    			@<Procedure> ?};  # The diagnosis or procedure 
                                             # relevant to the encounter 
     fhir:use @<CodeableConcept>?;           # Role that this diagnosis has 
                                             # within the encounter (e.g. 
@@ -257,7 +257,7 @@ start=@<Encounter> AND {fhir:nodeRole [fhir:treeRoot]}
 # List of locations where the patient has been
 <Encounter.location> EXTENDS @<BackboneElement> CLOSED {   
     fhir:location @<Reference> AND {fhir:link 
-    			@<Location> ? };  # Location the encounter takes place
+    			@<Location> ?};  # Location the encounter takes place
     fhir:status @<code> AND
     	{fhir:v @fhirvs:encounter-location-status}?;  # planned | active | reserved | 
                                             # completed 

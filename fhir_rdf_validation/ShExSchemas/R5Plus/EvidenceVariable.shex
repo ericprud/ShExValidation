@@ -194,7 +194,7 @@ start=@<EvidenceVariable> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # value was determined 
     fhir:device @<Reference> AND {fhir:link 
     			@<Device> OR 
-    			@<DeviceMetric> ? }?;  # Device used for determining 
+    			@<DeviceMetric> ?}?;  # Device used for determining 
                                             # characteristic 
     fhir:value @<CodeableConcept>  OR 
     			@<boolean>  OR 
@@ -219,7 +219,7 @@ start=@<EvidenceVariable> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:definitionReference @<Reference> AND {fhir:link 
     			@<Evidence> OR 
     			@<EvidenceVariable> OR 
-    			@<Group> ? }?;  # Defines the characteristic 
+    			@<Group> ?}?;  # Defines the characteristic 
                                             # (without using type and value) by 
                                             # a Reference 
     fhir:definitionCanonical @<canonical>?;  # Defines the characteristic 

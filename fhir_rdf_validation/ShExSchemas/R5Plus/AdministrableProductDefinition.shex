@@ -93,7 +93,7 @@ start=@<AdministrableProductDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # using by incoming references from 
                                             # the Ingredient resource 
     fhir:device @<Reference> AND {fhir:link 
-    			@<DeviceDefinition> ? }?;  # A device that is integral to the 
+    			@<DeviceDefinition> ?}?;  # A device that is integral to the 
                                             # medicinal product, in effect being 
                                             # considered as an "ingredient" of 
                                             # the medicinal product 

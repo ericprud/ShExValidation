@@ -95,7 +95,7 @@ start=@<DeviceDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:partNumber @<string>?;             # The part number or catalog number 
                                             # of the device 
     fhir:manufacturer @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Name of device manufacturer
+    			@<Organization> ?}?;  # Name of device manufacturer
     fhir:deviceName @<OneOrMore_DeviceDefinition.deviceName>?;  # The name or names of the device as 
                                             # given by the manufacturer 
     fhir:modelNumber @<string>?;            # The catalog or model number for 
@@ -125,7 +125,7 @@ start=@<DeviceDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # settings of a device, e.g., 
                                             # regulation status, time properties 
     fhir:owner @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Organization responsible for device
+    			@<Organization> ?}?;  # Organization responsible for device
     fhir:contact @<OneOrMore_ContactPoint>?;  # Details for human/organization for 
                                             # support 
     fhir:link @<OneOrMore_DeviceDefinition.link>?;  # An associated device, attached to, 
@@ -134,7 +134,7 @@ start=@<DeviceDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # model to the focal device 
     fhir:note @<OneOrMore_Annotation>?;     # Device notes and comments
     fhir:parentDevice @<Reference> AND {fhir:link 
-    			@<DeviceDefinition> ? }?;  # The parent device it can be part of
+    			@<DeviceDefinition> ?}?;  # The parent device it can be part of
     fhir:material @<OneOrMore_DeviceDefinition.material>?;  # A substance used to create the 
                                             # material(s) of which the device is 
                                             # made 
@@ -306,7 +306,7 @@ start=@<DeviceDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
 # A device, part of the current one
 <DeviceDefinition.hasPart> EXTENDS @<BackboneElement> CLOSED {   
     fhir:reference @<Reference> AND {fhir:link 
-    			@<DeviceDefinition> ? };  # Reference to the part
+    			@<DeviceDefinition> ?};  # Reference to the part
     fhir:count @<integer>?;                 # Number of occurrences of the part
 }  
 

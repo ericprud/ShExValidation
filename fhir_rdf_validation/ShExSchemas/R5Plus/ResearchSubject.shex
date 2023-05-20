@@ -77,7 +77,7 @@ start=@<ResearchSubject> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:progress @<OneOrMore_ResearchSubject.progress>?;  # Subject status
     fhir:period @<Period>?;                 # Start and end of participation
     fhir:study @<Reference> AND {fhir:link 
-    			@<ResearchStudy> ? };  # Study subject is part of
+    			@<ResearchStudy> ?};  # Study subject is part of
     fhir:subject @<Reference> AND {fhir:link 
     			@<BiologicallyDerivedProduct> OR 
     			@<Device> OR 
@@ -85,11 +85,11 @@ start=@<ResearchSubject> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Medication> OR 
     			@<Patient> OR 
     			@<Specimen> OR 
-    			@<Substance> ? };  # Who or what is part of study
+    			@<Substance> ?};  # Who or what is part of study
     fhir:assignedArm @<string>?;            # What path should be followed
     fhir:actualArm @<string>?;              # What path was followed
     fhir:consent @<Reference> AND {fhir:link 
-    			@<Consent> ? }?;  # Agreement to participate in study
+    			@<Consent> ?}?;  # Agreement to participate in study
 }  
 
 # Subject status

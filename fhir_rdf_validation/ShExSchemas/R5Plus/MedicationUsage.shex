@@ -93,9 +93,9 @@ start=@<MedicationUsage> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:medication @<CodeableReference>;   # What medication was taken
     fhir:subject @<Reference> AND {fhir:link 
     			@<Group> OR 
-    			@<Patient> ? };  # Who is/was taking  the medication
+    			@<Patient> ?};  # Who is/was taking  the medication
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # Encounter associated with 
+    			@<Encounter> ?}?;  # Encounter associated with 
                                             # MedicationUsage 
     fhir:effective @<dateTime>  OR 
     			@<Period>  ?;  # The date/time or interval when the 

@@ -108,17 +108,17 @@ start=@<ClaimResponse> AND {fhir:nodeRole [fhir:treeRoot]}
     	{fhir:v @fhirvs:claim-use};  # claim | preauthorization | 
                                             # predetermination 
     fhir:patient @<Reference> AND {fhir:link 
-    			@<Patient> ? };  # The recipient of the products and 
+    			@<Patient> ?};  # The recipient of the products and 
                                             # services 
     fhir:created @<dateTime>;               # Response creation date
     fhir:insurer @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Party responsible for reimbursement
+    			@<Organization> ?}?;  # Party responsible for reimbursement
     fhir:requestor @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Party responsible for the claim
+    			@<PractitionerRole> ?}?;  # Party responsible for the claim
     fhir:request @<Reference> AND {fhir:link 
-    			@<Claim> ? }?;  # Id of resource triggering 
+    			@<Claim> ?}?;  # Id of resource triggering 
                                             # adjudication 
     fhir:outcome @<code> AND
     	{fhir:v @fhirvs:claim-outcome};  # queued | complete | error | partial
@@ -258,7 +258,7 @@ start=@<ClaimResponse> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # product delivery 
     fhir:location @<CodeableConcept>  OR 
     			@<Address>  OR 
-    			(@<Reference>  AND {fhir:link @<Location> })  ?;  # Place of service or where product 
+    			(@<Reference>  AND {fhir:link @<Location>?})  ?;  # Place of service or where product 
                                             # was supplied 
     fhir:quantity @<Quantity>?;             # Count of products or services
     fhir:unitPrice @<Money>?;               # Fee, charge or cost per item
@@ -278,10 +278,10 @@ start=@<ClaimResponse> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:focal @<boolean>;                  # Coverage to be used for 
                                             # adjudication 
     fhir:coverage @<Reference> AND {fhir:link 
-    			@<Coverage> ? };  # Insurance information
+    			@<Coverage> ?};  # Insurance information
     fhir:businessArrangement @<string>?;    # Additional provider contract number
     fhir:claimResponse @<Reference> AND {fhir:link 
-    			@<ClaimResponse> ? }?;  # Adjudication results
+    			@<ClaimResponse> ?}?;  # Adjudication results
 }  
 
 # Processing errors

@@ -238,7 +238,7 @@ start=@<TestScript> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:autodelete @<boolean>;             # Whether or not to implicitly 
                                             # delete the fixture during teardown 
     fhir:resource @<Reference> AND {fhir:link 
-    			@<Resource> ? }?;  # Reference of the resource
+    			@<Resource> ?}?;  # Reference of the resource
 }  
 
 # Placeholder for evaluated elements

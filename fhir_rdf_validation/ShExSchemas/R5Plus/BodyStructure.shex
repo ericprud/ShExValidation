@@ -52,7 +52,7 @@ start=@<BodyStructure> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:description @<string>?;            # Text description
     fhir:image @<OneOrMore_Attachment>?;    # Attached images
     fhir:patient @<Reference> AND {fhir:link 
-    			@<Patient> ? };  # Who this is about
+    			@<Patient> ?};  # Who this is about
 }  
 
 # Excluded anatomic locations(s)

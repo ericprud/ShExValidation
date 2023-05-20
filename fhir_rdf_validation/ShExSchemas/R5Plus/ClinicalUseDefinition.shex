@@ -115,7 +115,7 @@ start=@<ClinicalUseDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:item (@<Reference>  AND {fhir:link @<MedicinalProductDefinition> OR 
     			 @<Medication> OR 
     			 @<Substance> OR 
-    			 @<ObservationDefinition> })  OR 
+    			 @<ObservationDefinition>?})  OR 
     			@<CodeableConcept>  ;  # The specific medication, food or 
                                             # laboratory test that interacts 
 }  

@@ -98,7 +98,7 @@ start=@<Practitioner> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:period @<Period>?;                 # Period during which the 
                                             # qualification is valid 
     fhir:issuer @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Organization that regulates and 
+    			@<Organization> ?}?;  # Organization that regulates and 
                                             # issues the qualification 
 }  
 

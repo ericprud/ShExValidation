@@ -54,10 +54,10 @@ start=@<ImmunizationRecommendation> AND {fhir:nodeRole [fhir:treeRoot]}
 
     fhir:identifier @<OneOrMore_Identifier>?;  # Business identifier
     fhir:patient @<Reference> AND {fhir:link 
-    			@<Patient> ? };  # Who this profile is for
+    			@<Patient> ?};  # Who this profile is for
     fhir:date @<dateTime>;                  # Date recommendation(s) created
     fhir:authority @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Who is responsible for protocol
+    			@<Organization> ?}?;  # Who is responsible for protocol
     fhir:recommendation @<OneOrMore_ImmunizationRecommendation.recommendation>;  # Vaccine administration 
                                             # recommendations 
 }  

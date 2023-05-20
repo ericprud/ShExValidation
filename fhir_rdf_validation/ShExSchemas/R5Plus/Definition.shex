@@ -91,13 +91,13 @@ IMPORT <CodeableReference.shex>
     fhir:experimental @<boolean>?;          # If for testing purposes, not real 
                                             # usage 
     fhir:subject @<CodeableConcept>  OR 
-    			(@<Reference>  AND {fhir:link @<Group> })  ?;  # Type of individual the defined 
+    			(@<Reference>  AND {fhir:link @<Group>?})  ?;  # Type of individual the defined 
                                             # service is for 
     fhir:date @<dateTime>?;                 # Date status first applied
     fhir:publisher @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # The name of the individual or 
+    			@<PractitionerRole> ?}?;  # The name of the individual or 
                                             # organization that published the 
                                             # {{title}} 
     fhir:contact @<OneOrMore_ContactDetail>?;  # Contact details for the publisher

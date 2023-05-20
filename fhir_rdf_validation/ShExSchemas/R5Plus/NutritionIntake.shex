@@ -126,10 +126,10 @@ start=@<NutritionIntake> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # of nutrition intake 
     fhir:subject @<Reference> AND {fhir:link 
     			@<Group> OR 
-    			@<Patient> ? };  # Who is/was consuming the food or 
+    			@<Patient> ?};  # Who is/was consuming the food or 
                                             # fluid 
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # Encounter associated with 
+    			@<Encounter> ?}?;  # Encounter associated with 
                                             # NutritionIntake 
     fhir:occurrence @<dateTime>  OR 
     			@<Period>  ?;  # The date/time or interval when the 
@@ -140,7 +140,7 @@ start=@<NutritionIntake> AND {fhir:nodeRole [fhir:treeRoot]}
     			 @<RelatedPerson> OR 
     			 @<Practitioner> OR 
     			 @<PractitionerRole> OR 
-    			 @<Organization> })  ?;  # Person or organization that 
+    			 @<Organization>?})  ?;  # Person or organization that 
                                             # provided the information about the 
                                             # consumption of this food or fluid 
     fhir:consumedItem @<OneOrMore_NutritionIntake.consumedItem>;  # What food or fluid product or item 
@@ -149,7 +149,7 @@ start=@<NutritionIntake> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # product, serving 
     fhir:performer @<OneOrMore_NutritionIntake.performer>?;  # Who was performed in the intake
     fhir:location @<Reference> AND {fhir:link 
-    			@<Location> ? }?;  # Where the intake occurred
+    			@<Location> ?}?;  # Where the intake occurred
     fhir:derivedFrom @<OneOrMore_Reference_Resource>?;  # Additional supporting information
     fhir:reason @<OneOrMore_CodeableReference>?;  # Reason for why the food or fluid 
                                             # is /was consumed 
@@ -189,7 +189,7 @@ start=@<NutritionIntake> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? };  # Who performed the intake
+    			@<RelatedPerson> ?};  # Who performed the intake
 }  
 
 #---------------------- Cardinality Types (OneOrMore) -------------------

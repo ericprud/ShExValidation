@@ -78,7 +78,7 @@ start=@<DocumentManifest> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Device> OR 
     			@<Group> OR 
     			@<Patient> OR 
-    			@<Practitioner> ? }?;  # The subject of the set of documents
+    			@<Practitioner> ?}?;  # The subject of the set of documents
     fhir:created @<dateTime>?;              # When this document manifest created
     fhir:author @<OneOrMore_Reference_Device_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson>?;  # Who and/or what authored the 
                                             # DocumentManifest 
@@ -96,7 +96,7 @@ start=@<DocumentManifest> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:identifier @<Identifier>?;         # Identifiers of things that are 
                                             # related 
     fhir:ref @<Reference> AND {fhir:link 
-    			@<Resource> ? }?;  # Related Resource
+    			@<Resource> ?}?;  # Related Resource
 }  
 
 #---------------------- Cardinality Types (OneOrMore) -------------------

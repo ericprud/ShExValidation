@@ -24,7 +24,7 @@ IMPORT <ResearchStudy.shex>
 
     fhir:url @<uri> AND
     	{fhir:value ["http://hl7.org/fhir/StructureDefinition/workflow-researchStudy"]}; 
-    fhir:value (@<Reference>  AND {fhir:link @<ResearchStudy> })  ; 
+    fhir:value (@<Reference>  AND {fhir:link @<ResearchStudy>?})  ; 
     ^fhir:extension { a [fhir:Composition]} OR 
           {a [fhir:Consent]} OR 
           {a [fhir:DeviceUsage]} OR 

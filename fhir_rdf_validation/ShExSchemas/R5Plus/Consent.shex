@@ -108,7 +108,7 @@ start=@<Consent> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:subject @<Reference> AND {fhir:link 
     			@<Group> OR 
     			@<Patient> OR 
-    			@<Practitioner> ? }?;  # Who the consent applies to
+    			@<Practitioner> ?}?;  # Who the consent applies to
     fhir:date @<date>?;                     # Fully executed date of the consent
     fhir:period @<Period>?;                 # Effective period for this Consent
     fhir:grantor @<OneOrMore_Reference_CareTeam_OR_HealthcareService_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson>?;  # Who is granting rights according 
@@ -135,7 +135,7 @@ start=@<Consent> AND {fhir:nodeRole [fhir:treeRoot]}
 # Computable version of the backing policy
 <Consent.policyBasis> EXTENDS @<BackboneElement> CLOSED {   
     fhir:reference @<Reference> AND {fhir:link 
-    			@<Resource> ? }?;  # Reference backing policy resource
+    			@<Resource> ?}?;  # Reference backing policy resource
     fhir:url @<url>?;                       # URL to a computable backing policy
 }  
 
@@ -146,10 +146,10 @@ start=@<Consent> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:verifiedBy @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Person conducting verification
+    			@<PractitionerRole> ?}?;  # Person conducting verification
     fhir:verifiedWith @<Reference> AND {fhir:link 
     			@<Patient> OR 
-    			@<RelatedPerson> ? }?;  # Person who verified
+    			@<RelatedPerson> ?}?;  # Person who verified
     fhir:verificationDate @<OneOrMore_dateTime>?;  # When consent verified
 }  
 
@@ -164,7 +164,7 @@ start=@<Consent> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Resource for the actor (or group, 
+    			@<RelatedPerson> ?}?;  # Resource for the actor (or group, 
                                             # by role) 
 }  
 
@@ -174,7 +174,7 @@ start=@<Consent> AND {fhir:nodeRole [fhir:treeRoot]}
     	{fhir:v @fhirvs:consent-data-meaning};  # instance | related | dependents | 
                                             # authoredby 
     fhir:reference @<Reference> AND {fhir:link 
-    			@<Resource> ? };  # The actual data reference
+    			@<Resource> ?};  # The actual data reference
 }  
 
 # Nested Exception Provisions

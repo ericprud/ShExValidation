@@ -82,7 +82,7 @@ start=@<InventoryReport> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Device> OR 
     			@<Patient> OR 
     			@<Practitioner> OR 
-    			@<RelatedPerson> ? }?;  # Who submits the report
+    			@<RelatedPerson> ?}?;  # Who submits the report
     fhir:reportingPeriod @<Period>?;        # The period the report refers to
     fhir:inventoryListing @<OneOrMore_InventoryReport.inventoryListing>?;  # An inventory listing section 
                                             # (grouped by any of the attributes) 
@@ -107,7 +107,7 @@ start=@<InventoryReport> AND {fhir:nodeRole [fhir:treeRoot]}
 # An inventory listing section (grouped by any of the attributes)
 <InventoryReport.inventoryListing> EXTENDS @<BackboneElement> CLOSED {   
     fhir:location @<Reference> AND {fhir:link 
-    			@<Location> ? }?;  # Location of the inventory items
+    			@<Location> ?}?;  # Location of the inventory items
     fhir:itemStatus @<CodeableConcept>?;    # The status of the items
     fhir:countingDateTime @<dateTime>?;     # The date and time when the items 
                                             # were counted 

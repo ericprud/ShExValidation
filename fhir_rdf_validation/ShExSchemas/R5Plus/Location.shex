@@ -86,10 +86,10 @@ start=@<Location> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:form @<CodeableConcept>?;          # Physical form of the location
     fhir:position @<Location.position>?;    # The absolute geographic location
     fhir:managingOrganization @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Organization responsible for 
+    			@<Organization> ?}?;  # Organization responsible for 
                                             # provisioning and upkeep 
     fhir:partOf @<Reference> AND {fhir:link 
-    			@<Location> ? }?;  # Another Location this one is 
+    			@<Location> ?}?;  # Another Location this one is 
                                             # physically a part of 
     fhir:characteristic @<OneOrMore_CodeableConcept>?;  # Collection of characteristics 
                                             # (attributes) 

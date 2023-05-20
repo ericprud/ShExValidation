@@ -120,17 +120,17 @@ start=@<GenomicStudy> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<Procedure> OR 
-    			@<Substance> ? };  # The primary subject of the genomic 
+    			@<Substance> ?};  # The primary subject of the genomic 
                                             # study 
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # The healthcare event with which 
+    			@<Encounter> ?}?;  # The healthcare event with which 
                                             # this genomics study is associated 
     fhir:startDate @<dateTime>?;            # When the genomic study was started
     fhir:basedOn @<OneOrMore_Reference_ServiceRequest_OR_Task>?;  # Event resources that the genomic 
                                             # study is based on 
     fhir:referrer @<Reference> AND {fhir:link 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Healthcare professional who 
+    			@<PractitionerRole> ?}?;  # Healthcare professional who 
                                             # requested or referred the genomic 
                                             # study 
     fhir:interpreter @<OneOrMore_Reference_Practitioner_OR_PractitionerRole>?;  # Healthcare professionals who 
@@ -150,7 +150,7 @@ start=@<GenomicStudy> AND {fhir:nodeRole [fhir:treeRoot]}
 # Outputs for the analysis event
 <GenomicStudy.analysis.output> EXTENDS @<BackboneElement> CLOSED {   
     fhir:file @<Reference> AND {fhir:link 
-    			@<DocumentReference> ? }?;  # File containing output data
+    			@<DocumentReference> ?}?;  # File containing output data
     fhir:type @<CodeableConcept>?;          # Type of output data (e.g., VCF, 
                                             # MAF, or BAM) 
 }  
@@ -158,11 +158,11 @@ start=@<GenomicStudy> AND {fhir:nodeRole [fhir:treeRoot]}
 # Inputs for the analysis event
 <GenomicStudy.analysis.input> EXTENDS @<BackboneElement> CLOSED {   
     fhir:file @<Reference> AND {fhir:link 
-    			@<DocumentReference> ? }?;  # File containing input data
+    			@<DocumentReference> ?}?;  # File containing input data
     fhir:type @<CodeableConcept>?;          # Type of input data (e.g., BAM, 
                                             # CRAM, or FASTA) 
     fhir:generatedBy @<Identifier>  OR 
-    			(@<Reference>  AND {fhir:link @<GenomicStudy> })  ?;  # The analysis event or other 
+    			(@<Reference>  AND {fhir:link @<GenomicStudy>?})  ?;  # The analysis event or other 
                                             # GenomicStudy that generated this 
                                             # input file 
 }  
@@ -196,7 +196,7 @@ start=@<GenomicStudy> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<Procedure> OR 
-    			@<Substance> ? }?;  # The subject of the analysis event
+    			@<Substance> ?}?;  # The subject of the analysis event
     fhir:specimen @<OneOrMore_Reference_Specimen>?;  # The specimen used in the analysis 
                                             # event 
     fhir:date @<dateTime>?;                 # The date of the analysis event
@@ -204,7 +204,7 @@ start=@<GenomicStudy> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # analysis event 
     fhir:protocolPerformed @<Reference> AND {fhir:link 
     			@<Procedure> OR 
-    			@<Task> ? }?;  # The protocol that was performed 
+    			@<Task> ?}?;  # The protocol that was performed 
                                             # for the analysis event 
     fhir:regionsStudied @<OneOrMore_Reference_DocumentReference_OR_Observation>?;  # The genomic regions to be studied 
                                             # in the analysis (BED file) 
@@ -221,7 +221,7 @@ start=@<GenomicStudy> AND {fhir:nodeRole [fhir:treeRoot]}
 # Devices used for the analysis (e.g., instruments, software), with settings and parameters
 <GenomicStudy.analysis.device> EXTENDS @<BackboneElement> CLOSED {   
     fhir:device @<Reference> AND {fhir:link 
-    			@<Device> ? }?;  # Device used for the analysis
+    			@<Device> ?}?;  # Device used for the analysis
     fhir:function @<CodeableConcept>?;      # Specific function for the device 
                                             # used for the analysis 
 }  
@@ -232,7 +232,7 @@ start=@<GenomicStudy> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Device> OR 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # The organization, healthcare 
+    			@<PractitionerRole> ?}?;  # The organization, healthcare 
                                             # professional, or others who 
                                             # participated in performing this 
                                             # analysis 

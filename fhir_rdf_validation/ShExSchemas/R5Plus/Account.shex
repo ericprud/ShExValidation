@@ -96,7 +96,7 @@ start=@<Account> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # account, and what order should 
                                             # they be applied to the account 
     fhir:owner @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Entity managing the Account
+    			@<Organization> ?}?;  # Entity managing the Account
     fhir:description @<string>?;            # Explanation of purpose/use
     fhir:guarantor @<OneOrMore_Account.guarantor>?;  # The parties ultimately responsible 
                                             # for balancing the Account 
@@ -111,7 +111,7 @@ start=@<Account> AND {fhir:nodeRole [fhir:treeRoot]}
 # The party(s) that are responsible for covering the payment of this account, and what order should they be applied to the account
 <Account.coverage> EXTENDS @<BackboneElement> CLOSED {   
     fhir:coverage @<Reference> AND {fhir:link 
-    			@<Coverage> ? };  # The party(s), such as insurances, 
+    			@<Coverage> ?};  # The party(s), such as insurances, 
                                             # that may contribute to the payment 
                                             # of this account 
     fhir:priority @<positiveInt>?;          # The priority of the coverage in 
@@ -123,7 +123,7 @@ start=@<Account> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:relationship @<CodeableConcept>?;  # Relationship of the associated 
                                             # Account 
     fhir:account @<Reference> AND {fhir:link 
-    			@<Account> ? };  # Reference to an associated Account
+    			@<Account> ?};  # Reference to an associated Account
 }  
 
 # Calculated account balance(s)
@@ -140,7 +140,7 @@ start=@<Account> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:party @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Patient> OR 
-    			@<RelatedPerson> ? };  # Responsible entity
+    			@<RelatedPerson> ?};  # Responsible entity
     fhir:onHold @<boolean>?;                # Credit or other hold applied
     fhir:period @<Period>?;                 # Guarantee account during
 }  

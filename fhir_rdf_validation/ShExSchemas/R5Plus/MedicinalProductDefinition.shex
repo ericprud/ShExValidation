@@ -187,7 +187,7 @@ start=@<MedicinalProductDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # Information 
     fhir:contact @<Reference> AND {fhir:link 
     			@<Organization> OR 
-    			@<PractitionerRole> ? };  # A product specific contact, person 
+    			@<PractitionerRole> ?};  # A product specific contact, person 
                                             # (in a role), or an organization 
 }  
 

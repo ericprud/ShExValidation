@@ -64,7 +64,7 @@ IMPORT <ImmunizationRecommendation.shex>
     			 @<MedicationRequest> OR 
     			 @<MedicationUsage> OR 
     			 @<Observation> OR 
-    			 @<Procedure> })  ; 
+    			 @<Procedure>?})  ; 
     ^fhir:extension { a [fhir:Procedure]}
 
 }  

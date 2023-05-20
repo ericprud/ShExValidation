@@ -145,11 +145,11 @@ start=@<Device> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # actions, conditions and status 
     fhir:association @<OneOrMore_Device.association>?;  # Current association of the device
     fhir:owner @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Organization responsible for device
+    			@<Organization> ?}?;  # Organization responsible for device
     fhir:contact @<OneOrMore_ContactPoint>?;  # Details for human/organization for 
                                             # support 
     fhir:location @<Reference> AND {fhir:link 
-    			@<Location> ? }?;  # Where the device is found
+    			@<Location> ?}?;  # Where the device is found
     fhir:url @<uri>?;                       # Network address to contact device
     fhir:endpoint @<OneOrMore_Reference_Endpoint>?;  # Technical endpoints providing 
                                             # access to electronic services 
@@ -160,7 +160,7 @@ start=@<Device> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:note @<OneOrMore_Annotation>?;     # Device notes and comments
     fhir:safety @<OneOrMore_CodeableConcept>?;  # Safety Characteristics of Device
     fhir:parent @<Reference> AND {fhir:link 
-    			@<Device> ? }?;  # The higher level or encompassing 
+    			@<Device> ?}?;  # The higher level or encompassing 
                                             # device that this device is a 
                                             # logical part of 
 }  
@@ -188,7 +188,7 @@ start=@<Device> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:statusReason @<OneOrMore_CodeableConcept>?;  # The reasons given for the current 
                                             # association status 
     fhir:humanSubject @<Reference> AND {fhir:link 
-    			@<Patient> ? }?;  # The individual associated with the 
+    			@<Patient> ?}?;  # The individual associated with the 
                                             # device 
     fhir:bodyStructure @<CodeableReference>?;  # Current anatomical location of 
                                             # device in/on humanSubject 

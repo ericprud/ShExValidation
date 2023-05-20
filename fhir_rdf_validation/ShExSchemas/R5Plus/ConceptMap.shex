@@ -120,10 +120,10 @@ start=@<ConceptMap> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:relatedArtifact @<OneOrMore_RelatedArtifact>?;  # Additional documentation, 
                                             # citations, etc. 
     fhir:sourceScope @<uri>  OR 
-    			(@<canonical>  AND {fhir:link @<ValueSet> })  ?;  # The source value set that contains 
+    			(@<canonical>  AND {fhir:link @<ValueSet>?})  ?;  # The source value set that contains 
                                             # the concepts that are being mapped 
     fhir:targetScope @<uri>  OR 
-    			(@<canonical>  AND {fhir:link @<ValueSet> })  ?;  # The target value set which 
+    			(@<canonical>  AND {fhir:link @<ValueSet>?})  ?;  # The target value set which 
                                             # provides context for the mappings 
     fhir:group @<OneOrMore_ConceptMap.group>?;  # Same source and target systems
 }  

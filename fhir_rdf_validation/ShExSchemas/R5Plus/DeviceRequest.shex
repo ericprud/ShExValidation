@@ -140,9 +140,9 @@ start=@<DeviceRequest> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Device> OR 
     			@<Group> OR 
     			@<Location> OR 
-    			@<Patient> ? };  # Focus of request
+    			@<Patient> ?};  # Focus of request
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # Encounter motivating request
+    			@<Encounter> ?}?;  # Encounter motivating request
     fhir:occurrence @<dateTime>  OR 
     			@<Period>  OR 
     			@<Timing>  ?;  # Desired time or schedule for use
@@ -151,7 +151,7 @@ start=@<DeviceRequest> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Device> OR 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Who/what submitted the device 
+    			@<PractitionerRole> ?}?;  # Who/what submitted the device 
                                             # request 
     fhir:performerType @<CodeableConcept>?;  # Filler role
     fhir:performer @<Reference> AND {fhir:link 
@@ -162,7 +162,7 @@ start=@<DeviceRequest> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Requested Filler
+    			@<RelatedPerson> ?}?;  # Requested Filler
     fhir:reason @<OneOrMore_CodeableReference>?;  # Coded/Linked Reason for request
     fhir:asNeeded @<boolean>?;              # PRN status of request
     fhir:asNeededFor @<CodeableConcept>?;   # Device usage reason

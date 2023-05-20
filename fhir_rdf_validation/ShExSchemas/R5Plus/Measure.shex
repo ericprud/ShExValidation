@@ -89,7 +89,7 @@ start=@<Measure> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:experimental @<boolean>?;          # For testing purposes, not real 
                                             # usage 
     fhir:subject @<CodeableConcept>  OR 
-    			(@<Reference>  AND {fhir:link @<Group> })  ?;  # E.g. Patient, Practitioner, 
+    			(@<Reference>  AND {fhir:link @<Group>?})  ?;  # E.g. Patient, Practitioner, 
                                             # RelatedPerson, Organization, 
                                             # Location, Device 
     fhir:basis @<code> AND

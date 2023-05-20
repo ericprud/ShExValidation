@@ -127,7 +127,7 @@ start=@<CapabilityStatement> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:description @<string>;             # Describes this specific instance
     fhir:url @<url>?;                       # Base URL for the installation
     fhir:custodian @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Organization that manages the data
+    			@<Organization> ?}?;  # Organization that manages the data
 }  
 
 # What operations are supported?

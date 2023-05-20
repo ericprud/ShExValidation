@@ -164,16 +164,16 @@ start=@<RequestOrchestration> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:code @<CodeableConcept>?;          # What's being requested/ordered
     fhir:subject @<Reference> AND {fhir:link 
     			@<Group> OR 
-    			@<Patient> ? }?;  # Who the request orchestration is 
+    			@<Patient> ?}?;  # Who the request orchestration is 
                                             # about 
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # Created as part of
+    			@<Encounter> ?}?;  # Created as part of
     fhir:authoredOn @<dateTime>?;           # When the request orchestration was 
                                             # authored 
     fhir:author @<Reference> AND {fhir:link 
     			@<Device> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Device or practitioner that 
+    			@<PractitionerRole> ?}?;  # Device or practitioner that 
                                             # authored the request orchestration 
     fhir:reason @<OneOrMore_CodeableReference>?;  # Why the request orchestration is 
                                             # needed 
@@ -245,12 +245,12 @@ start=@<RequestOrchestration> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:cardinalityBehavior @<code> AND
     	{fhir:v @fhirvs:action-cardinality-behavior}?;  # single | multiple
     fhir:resource @<Reference> AND {fhir:link 
-    			@<Resource> ? }?;  # The target of the action
+    			@<Resource> ?}?;  # The target of the action
     fhir:definition (@<canonical>  AND {fhir:link @<ActivityDefinition> OR 
     			 @<ObservationDefinition> OR 
     			 @<PlanDefinition> OR 
     			 @<Questionnaire> OR 
-    			 @<SpecimenDefinition> })  OR 
+    			 @<SpecimenDefinition>?})  OR 
     			@<uri>  ?;  # Description of the activity to be 
                                             # performed 
     fhir:transform @<canonical>?;           # Transform to apply the template
@@ -302,11 +302,11 @@ start=@<RequestOrchestration> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Who or what can participate
+    			@<RelatedPerson> ?}?;  # Who or what can participate
     fhir:role @<CodeableConcept>?;          # E.g. Nurse, Surgeon, Parent, etc.
     fhir:function @<CodeableConcept>?;      # E.g. Author, Reviewer, Witness, 
                                             # etc. 
-    fhir:actor (@<canonical>  AND {fhir:link @<CapabilityStatement> })  OR 
+    fhir:actor (@<canonical>  AND {fhir:link @<CapabilityStatement>?})  OR 
     			(@<Reference>  AND {fhir:link @<CareTeam> OR 
     			 @<Device> OR 
     			 @<DeviceDefinition> OR 
@@ -318,7 +318,7 @@ start=@<RequestOrchestration> AND {fhir:nodeRole [fhir:treeRoot]}
     			 @<Patient> OR 
     			 @<Practitioner> OR 
     			 @<PractitionerRole> OR 
-    			 @<RelatedPerson> })  ?;  # Who/what is participating?
+    			 @<RelatedPerson>?})  ?;  # Who/what is participating?
 }  
 
 # Dynamic aspects of the definition

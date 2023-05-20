@@ -143,10 +143,10 @@ IMPORT <ImmunizationRecommendation.shex>
     fhir:product @<CodeableReference>?;     # Product requested/ordered
     fhir:subject @<Reference> AND {fhir:link 
     			@<Group> OR 
-    			@<Patient> ? };  # Individual the service is 
+    			@<Patient> ?};  # Individual the service is 
                                             # ordered/prohibited for 
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # Encounter the {{title}} is tied to
+    			@<Encounter> ?}?;  # Encounter the {{title}} is tied to
     fhir:occurrence @<dateTime>  OR 
     			@<Period>  OR 
     			@<Timing>  ?;  # When service should (not) occur
@@ -158,13 +158,13 @@ IMPORT <ImmunizationRecommendation.shex>
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Who/what is requesting service
+    			@<RelatedPerson> ?}?;  # Who/what is requesting service
     fhir:reported @<boolean>  OR 
     			(@<Reference>  AND {fhir:link @<Patient> OR 
     			 @<RelatedPerson> OR 
     			 @<Practitioner> OR 
     			 @<PractitionerRole> OR 
-    			 @<Organization> })  ?;  # Reported rather than primary record
+    			 @<Organization>?})  ?;  # Reported rather than primary record
     fhir:performerType @<CodeableConcept>?;  # Desired kind of service performer
     fhir:performer @<Reference> AND {fhir:link 
     			@<CareTeam> OR 
@@ -174,7 +174,7 @@ IMPORT <ImmunizationRecommendation.shex>
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Specific desired (non)performer
+    			@<RelatedPerson> ?}?;  # Specific desired (non)performer
     fhir:deliverTo @<OneOrMore_Reference_CareTeam_OR_Device_OR_Endpoint_OR_HealthcareService_OR_Location_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson>?;  # Who should receive result of 
                                             # {{title}} 
     fhir:reason @<OneOrMore_CodeableReference>?;  # Why is service (not) needed?

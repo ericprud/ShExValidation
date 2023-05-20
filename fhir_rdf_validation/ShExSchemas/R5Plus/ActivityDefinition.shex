@@ -177,8 +177,8 @@ start=@<ActivityDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
     			 @<SubstanceDefinition> OR 
     			 @<AdministrableProductDefinition> OR 
     			 @<ManufacturedItemDefinition> OR 
-    			 @<PackagedProductDefinition> })  OR 
-    			(@<canonical>  AND {fhir:link @<EvidenceVariable> })  ?;  # Type of individual the activity 
+    			 @<PackagedProductDefinition>?})  OR 
+    			(@<canonical>  AND {fhir:link @<EvidenceVariable>?})  ?;  # Type of individual the activity 
                                             # definition is intended for 
     fhir:date @<dateTime>?;                 # Date last changed
     fhir:publisher @<string>?;              # Name of the publisher/steward 
@@ -236,7 +236,7 @@ start=@<ActivityDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # action 
     fhir:product (@<Reference>  AND {fhir:link @<Medication> OR 
     			 @<Substance> OR 
-    			 @<Ingredient> })  OR 
+    			 @<Ingredient>?})  OR 
     			@<CodeableConcept>  ?;  # What's administered/supplied
     fhir:quantity @<Quantity>?;             # How much is 
                                             # administered/consumed/supplied 
@@ -273,7 +273,7 @@ start=@<ActivityDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Who or what can participate
+    			@<RelatedPerson> ?}?;  # Who or what can participate
     fhir:role @<CodeableConcept>?;          # E.g. Nurse, Surgeon, Parent, etc.
     fhir:function @<CodeableConcept>?;      # E.g. Author, Reviewer, Witness, 
                                             # etc. 

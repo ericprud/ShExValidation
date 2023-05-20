@@ -114,7 +114,7 @@ start=@<SubstanceDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:property @<OneOrMore_SubstanceDefinition.property>?;  # General specifications for this 
                                             # substance 
     fhir:referenceInformation @<Reference> AND {fhir:link 
-    			@<SubstanceReferenceInformation> ? }?;  # General information detailing this 
+    			@<SubstanceReferenceInformation> ?}?;  # General information detailing this 
                                             # substance 
     fhir:molecularWeight @<OneOrMore_SubstanceDefinition.molecularWeight>?;  # The average mass of a molecule of 
                                             # a compound 
@@ -124,12 +124,12 @@ start=@<SubstanceDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:relationship @<OneOrMore_SubstanceDefinition.relationship>?;  # A link between this substance and 
                                             # another 
     fhir:nucleicAcid @<Reference> AND {fhir:link 
-    			@<SubstanceNucleicAcid> ? }?;  # Data items specific to nucleic 
+    			@<SubstanceNucleicAcid> ?}?;  # Data items specific to nucleic 
                                             # acids 
     fhir:polymer @<Reference> AND {fhir:link 
-    			@<SubstancePolymer> ? }?;  # Data items specific to polymers
+    			@<SubstancePolymer> ?}?;  # Data items specific to polymers
     fhir:protein @<Reference> AND {fhir:link 
-    			@<SubstanceProtein> ? }?;  # Data items specific to proteins
+    			@<SubstanceProtein> ?}?;  # Data items specific to proteins
     fhir:sourceMaterial @<SubstanceDefinition.sourceMaterial>?;  # Material or taxonomic/anatomical 
                                             # source 
 }  
@@ -217,7 +217,7 @@ start=@<SubstanceDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # e.g. InChI, SMILES, MOLFILE (note: 
                                             # not the physical file format) 
     fhir:document @<Reference> AND {fhir:link 
-    			@<DocumentReference> ? }?;  # An attachment with the structural 
+    			@<DocumentReference> ?}?;  # An attachment with the structural 
                                             # representation e.g. a structure 
                                             # graphic or AnIML file 
 }  
@@ -247,7 +247,7 @@ start=@<SubstanceDefinition> AND {fhir:nodeRole [fhir:treeRoot]}
 
 # A link between this substance and another
 <SubstanceDefinition.relationship> EXTENDS @<BackboneElement> CLOSED {   
-    fhir:substanceDefinition (@<Reference>  AND {fhir:link @<SubstanceDefinition> })  OR 
+    fhir:substanceDefinition (@<Reference>  AND {fhir:link @<SubstanceDefinition>?})  OR 
     			@<CodeableConcept>  ?;  # A pointer to another substance, as 
                                             # a resource or a representational 
                                             # code 

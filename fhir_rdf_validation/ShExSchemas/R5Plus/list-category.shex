@@ -24,7 +24,7 @@ IMPORT <CodeableConcept.shex>
 
     fhir:url @<uri> AND
     	{fhir:value ["http://hl7.org/fhir/StructureDefinition/list-category"]}; 
-    fhir:value (@<CodeableConcept>  AND {fhir:link @<List> })  ; 
+    fhir:value (@<CodeableConcept>  AND {fhir:link @<List>?})  ; 
     ^fhir:extension { a [fhir:List]}
 
 }  

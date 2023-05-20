@@ -145,11 +145,11 @@ start=@<DiagnosticReport> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<Procedure> OR 
-    			@<Substance> ? }?;  # The subject of the report - 
+    			@<Substance> ?}?;  # The subject of the report - 
                                             # usually, but not always, the 
                                             # patient 
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # Health care event when test ordered
+    			@<Encounter> ?}?;  # Health care event when test ordered
     fhir:effective @<dateTime>  OR 
     			@<Period>  ?;  # Clinically relevant 
                                             # time/time-period for report 
@@ -168,7 +168,7 @@ start=@<DiagnosticReport> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:media @<OneOrMore_DiagnosticReport.media>?;  # Key images or data associated with 
                                             # this report 
     fhir:composition @<Reference> AND {fhir:link 
-    			@<Composition> ? }?;  # Reference to a Composition 
+    			@<Composition> ?}?;  # Reference to a Composition 
                                             # resource for the DiagnosticReport 
                                             # structure 
     fhir:conclusion @<string>?;             # Clinical conclusion 
@@ -185,7 +185,7 @@ start=@<DiagnosticReport> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Citation> OR 
     			@<DiagnosticReport> OR 
     			@<Observation> OR 
-    			@<Procedure> ? };  # Supporting information reference
+    			@<Procedure> ?};  # Supporting information reference
 }  
 
 # Key images or data associated with this report

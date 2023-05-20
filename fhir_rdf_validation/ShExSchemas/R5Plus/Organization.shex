@@ -63,7 +63,7 @@ start=@<Organization> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:contact @<OneOrMore_ExtendedContactDetail>?;  # Official contact details for the 
                                             # Organization 
     fhir:partOf @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # The organization of which this 
+    			@<Organization> ?}?;  # The organization of which this 
                                             # organization forms a part 
     fhir:endpoint @<OneOrMore_Reference_Endpoint>?;  # Technical endpoints providing 
                                             # access to services operated for 
@@ -83,7 +83,7 @@ start=@<Organization> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:period @<Period>?;                 # Period during which the 
                                             # qualification is valid 
     fhir:issuer @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Organization that regulates and 
+    			@<Organization> ?}?;  # Organization that regulates and 
                                             # issues the qualification 
 }  
 

@@ -71,24 +71,24 @@ start=@<MessageHeader> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:nodeRole [fhir:treeRoot]?;
 
     fhir:event @<Coding>  OR 
-    			(@<canonical>  AND {fhir:link @<EventDefinition> })  ;  # Event code or link to 
+    			(@<canonical>  AND {fhir:link @<EventDefinition>?})  ;  # Event code or link to 
                                             # EventDefinition 
     fhir:destination @<OneOrMore_MessageHeader.destination>?;  # Message destination application(s)
     fhir:sender @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Real world sender of the message
+    			@<PractitionerRole> ?}?;  # Real world sender of the message
     fhir:enterer @<Reference> AND {fhir:link 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # The source of the data entry
+    			@<PractitionerRole> ?}?;  # The source of the data entry
     fhir:author @<Reference> AND {fhir:link 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # The source of the decision
+    			@<PractitionerRole> ?}?;  # The source of the decision
     fhir:source @<MessageHeader.source>;    # Message source application
     fhir:responsible @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Final responsibility for event
+    			@<PractitionerRole> ?}?;  # Final responsibility for event
     fhir:reason @<CodeableConcept>?;        # Cause of event
     fhir:response @<MessageHeader.response>?;  # If this is a reply to prior message
     fhir:focus @<OneOrMore_Reference_Resource>?;  # The actual content of the message
@@ -100,13 +100,13 @@ start=@<MessageHeader> AND {fhir:nodeRole [fhir:treeRoot]}
 <MessageHeader.destination> EXTENDS @<BackboneElement> CLOSED {   
     fhir:name @<string>?;                   # Name of system
     fhir:target @<Reference> AND {fhir:link 
-    			@<Device> ? }?;  # Particular delivery destination 
+    			@<Device> ?}?;  # Particular delivery destination 
                                             # within the destination 
     fhir:endpoint @<url>?;                  # Actual destination address or id
     fhir:receiver @<Reference> AND {fhir:link 
     			@<Organization> OR 
     			@<Practitioner> OR 
-    			@<PractitionerRole> ? }?;  # Intended "real-world" recipient 
+    			@<PractitionerRole> ?}?;  # Intended "real-world" recipient 
                                             # for the data 
 }  
 
@@ -126,7 +126,7 @@ start=@<MessageHeader> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:code @<code> AND
     	{fhir:v @fhirvs:response-code};  # ok | transient-error | fatal-error
     fhir:details @<Reference> AND {fhir:link 
-    			@<OperationOutcome> ? }?;  # Specific list of 
+    			@<OperationOutcome> ?}?;  # Specific list of 
                                             # hints/warnings/errors 
 }  
 

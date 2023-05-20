@@ -62,7 +62,7 @@ start=@<Endpoint> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:environmentType @<OneOrMore_CodeableConcept>?;  # The type of environment(s) exposed 
                                             # at this endpoint 
     fhir:managingOrganization @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Organization that manages this 
+    			@<Organization> ?}?;  # Organization that manages this 
                                             # endpoint (might not be the 
                                             # organization that exposes the 
                                             # endpoint) 

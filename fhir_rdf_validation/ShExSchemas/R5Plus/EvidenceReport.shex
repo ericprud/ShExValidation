@@ -100,7 +100,7 @@ start=@<EvidenceReport> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:relatedIdentifier @<OneOrMore_Identifier>?;  # Identifiers for articles that may 
                                             # relate to more than one evidence 
                                             # report 
-    fhir:citeAs (@<Reference>  AND {fhir:link @<Citation> })  OR 
+    fhir:citeAs (@<Reference>  AND {fhir:link @<Citation>?})  OR 
     			@<markdown>  ?;  # Citation for this report
     fhir:type @<CodeableConcept>?;          # Kind of report
     fhir:note @<OneOrMore_Annotation>?;     # Used for footnotes and annotations
@@ -123,7 +123,7 @@ start=@<EvidenceReport> AND {fhir:nodeRole [fhir:treeRoot]}
 # Characteristic
 <EvidenceReport.subject.characteristic> EXTENDS @<BackboneElement> CLOSED {   
     fhir:code @<CodeableConcept>;           # Characteristic code
-    fhir:value (@<Reference>  AND {fhir:link @<Resource> })  OR 
+    fhir:value (@<Reference>  AND {fhir:link @<Resource>?})  OR 
     			@<CodeableConcept>  OR 
     			@<boolean>  OR 
     			@<Quantity>  OR 
@@ -144,7 +144,7 @@ start=@<EvidenceReport> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # Identifier 
     fhir:display @<markdown>?;              # Target of the relationship Display
     fhir:resource @<Reference> AND {fhir:link 
-    			@<Resource> ? }?;  # Target of the relationship 
+    			@<Resource> ?}?;  # Target of the relationship 
                                             # Resource reference 
 }  
 
@@ -170,7 +170,7 @@ start=@<EvidenceReport> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:focus @<CodeableConcept>?;         # Classification of section 
                                             # (recommended) 
     fhir:focusReference @<Reference> AND {fhir:link 
-    			@<Resource> ? }?;  # Classification of section by 
+    			@<Resource> ?}?;  # Classification of section by 
                                             # Resource 
     fhir:author @<OneOrMore_Reference_Device_OR_Group_OR_Organization_OR_Person>?;  # Who and/or what authored the 
                                             # section 

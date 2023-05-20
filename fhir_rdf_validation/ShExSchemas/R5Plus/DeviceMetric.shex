@@ -48,10 +48,10 @@ start=@<DeviceMetric> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # Heart Rate or PEEP Setting 
     fhir:unit @<CodeableConcept>?;          # Unit of Measure for the Metric
     fhir:source @<Reference> AND {fhir:link 
-    			@<Device> ? }?;  # Describes the link to the source 
+    			@<Device> ?}?;  # Describes the link to the source 
                                             # Device 
     fhir:parent @<Reference> AND {fhir:link 
-    			@<Device> ? }?;  # Describes the link to the parent 
+    			@<Device> ?}?;  # Describes the link to the parent 
                                             # Device 
     fhir:operationalStatus @<code> AND
     	{fhir:v @fhirvs:metric-operational-status}?;  # on | off | standby | 

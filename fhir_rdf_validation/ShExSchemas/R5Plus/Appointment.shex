@@ -151,10 +151,10 @@ start=@<Appointment> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:supportingInformation @<OneOrMore_Reference_Resource>?;  # Additional information to support 
                                             # the appointment 
     fhir:previousAppointment @<Reference> AND {fhir:link 
-    			@<Appointment> ? }?;  # The previous appointment in a 
+    			@<Appointment> ?}?;  # The previous appointment in a 
                                             # series 
     fhir:originatingAppointment @<Reference> AND {fhir:link 
-    			@<Appointment> ? }?;  # The originating appointment in a 
+    			@<Appointment> ?}?;  # The originating appointment in a 
                                             # recurring set of appointments 
     fhir:start @<instant>?;                 # When appointment is to take place
     fhir:end @<instant>?;                   # When appointment is to conclude
@@ -174,7 +174,7 @@ start=@<Appointment> AND {fhir:nodeRole [fhir:treeRoot]}
                                             # allocated to assess 
     fhir:subject @<Reference> AND {fhir:link 
     			@<Group> OR 
-    			@<Patient> ? }?;  # The patient or group associated 
+    			@<Patient> ?}?;  # The patient or group associated 
                                             # with the appointment 
     fhir:participant @<OneOrMore_Appointment.participant>;  # Participants involved in 
                                             # appointment 
@@ -248,7 +248,7 @@ start=@<Appointment> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # The individual, device, location, 
+    			@<RelatedPerson> ?}?;  # The individual, device, location, 
                                             # or service participating in the 
                                             # appointment 
     fhir:required @<boolean>?;              # The participant is required to 

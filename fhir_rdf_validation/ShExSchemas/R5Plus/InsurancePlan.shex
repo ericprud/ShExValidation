@@ -69,9 +69,9 @@ start=@<InsurancePlan> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:alias @<OneOrMore_string>?;        # Alternate names
     fhir:period @<Period>?;                 # When the product is available
     fhir:ownedBy @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Product issuer
+    			@<Organization> ?}?;  # Product issuer
     fhir:administeredBy @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Product administrator
+    			@<Organization> ?}?;  # Product administrator
     fhir:coverageArea @<OneOrMore_Reference_Location>?;  # Where product applies
     fhir:contact @<OneOrMore_ExtendedContactDetail>?;  # Official contact details relevant 
                                             # to the health insurance 

@@ -127,7 +127,7 @@ start=@<Goal> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:subject @<Reference> AND {fhir:link 
     			@<Group> OR 
     			@<Organization> OR 
-    			@<Patient> ? };  # Who this goal is intended for
+    			@<Patient> ?};  # Who this goal is intended for
     fhir:start @<date>  OR 
     			@<CodeableConcept>  ?;  # When goal pursuit begins
     fhir:target @<OneOrMore_Goal.target>?;  # Target outcome for the goal
@@ -138,7 +138,7 @@ start=@<Goal> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Who's responsible for creating 
+    			@<RelatedPerson> ?}?;  # Who's responsible for creating 
                                             # Goal? 
     fhir:addresses @<OneOrMore_Reference_Condition_OR_MedicationRequest_OR_MedicationUsage_OR_NutritionOrder_OR_Observation_OR_RiskAssessment_OR_ServiceRequest>?;  # Issues addressed by this goal
     fhir:note @<OneOrMore_Annotation>?;     # Comments about the goal

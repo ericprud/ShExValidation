@@ -138,7 +138,7 @@ start=@<Questionnaire> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<time>  OR 
     			@<string>  OR 
     			@<Coding>  OR 
-    			(@<Reference>  AND {fhir:link @<Resource> })  ;  # Answer value
+    			(@<Reference>  AND {fhir:link @<Resource>?})  ;  # Answer value
     fhir:initialSelected @<boolean>?;       # Whether option is selected by 
                                             # default 
 }  
@@ -197,7 +197,7 @@ start=@<Questionnaire> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<string>  OR 
     			@<Coding>  OR 
     			@<Quantity>  OR 
-    			(@<Reference>  AND {fhir:link @<Resource> })  ;  # Value for question comparison 
+    			(@<Reference>  AND {fhir:link @<Resource>?})  ;  # Value for question comparison 
                                             # based on operator 
 }  
 
@@ -214,7 +214,7 @@ start=@<Questionnaire> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Attachment>  OR 
     			@<Coding>  OR 
     			@<Quantity>  OR 
-    			(@<Reference>  AND {fhir:link @<Resource> })  ;  # Actual value for initializing the 
+    			(@<Reference>  AND {fhir:link @<Resource>?})  ;  # Actual value for initializing the 
                                             # question 
 }  
 

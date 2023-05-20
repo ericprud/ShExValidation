@@ -170,7 +170,7 @@ start=@<Citation> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:title @<string>?;                  # Name of the database or title of 
                                             # the book or journal 
     fhir:publisher @<Reference> AND {fhir:link 
-    			@<Organization> ? }?;  # Name of the publisher
+    			@<Organization> ?}?;  # Name of the publisher
     fhir:publisherLocation @<string>?;      # Geographic location of the 
                                             # publisher 
 }  
@@ -261,7 +261,7 @@ start=@<Citation> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:value @<string>;                   # The version number or other 
                                             # version identifier 
     fhir:baseCitation @<Reference> AND {fhir:link 
-    			@<Citation> ? }?;  # Citation for the main version of 
+    			@<Citation> ?}?;  # Citation for the main version of 
                                             # the cited artifact 
 }  
 
@@ -341,7 +341,7 @@ start=@<Citation> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:type @<CodeableConcept>?;          # The kind of component
     fhir:value @<string>?;                  # The specification of the component
     fhir:baseCitation @<Reference> AND {fhir:link 
-    			@<Citation> ? }?;  # The citation for the full article 
+    			@<Citation> ?}?;  # The citation for the full article 
                                             # or artifact 
 }  
 
@@ -371,7 +371,7 @@ start=@<Citation> AND {fhir:nodeRole [fhir:treeRoot]}
 <Citation.citedArtifact.contributorship.entry> EXTENDS @<BackboneElement> CLOSED {   
     fhir:contributor @<Reference> AND {fhir:link 
     			@<Organization> OR 
-    			@<Practitioner> ? };  # The identity of the individual 
+    			@<Practitioner> ?};  # The identity of the individual 
                                             # entity 
     fhir:forenameInitials @<string>?;       # Initials for forename
     fhir:affiliation @<OneOrMore_Reference_Organization_OR_PractitionerRole>?;  # Organizational affiliation

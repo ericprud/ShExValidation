@@ -160,9 +160,9 @@ start=@<CarePlan> AND {fhir:nodeRole [fhir:treeRoot]}
     fhir:description @<string>?;            # Summary of nature of plan
     fhir:subject @<Reference> AND {fhir:link 
     			@<Group> OR 
-    			@<Patient> ? };  # Who the care plan is for
+    			@<Patient> ?};  # Who the care plan is for
     fhir:encounter @<Reference> AND {fhir:link 
-    			@<Encounter> ? }?;  # The Encounter during which this 
+    			@<Encounter> ?}?;  # The Encounter during which this 
                                             # CarePlan was created 
     fhir:period @<Period>?;                 # Time period plan covers
     fhir:created @<dateTime>?;              # Date record was first recorded
@@ -173,7 +173,7 @@ start=@<CarePlan> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<Patient> OR 
     			@<Practitioner> OR 
     			@<PractitionerRole> OR 
-    			@<RelatedPerson> ? }?;  # Who is the designated responsible 
+    			@<RelatedPerson> ?}?;  # Who is the designated responsible 
                                             # party 
     fhir:contributor @<OneOrMore_Reference_CareTeam_OR_Device_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson>?;  # Who provided the content of the 
                                             # care plan 
@@ -205,7 +205,7 @@ start=@<CarePlan> AND {fhir:nodeRole [fhir:treeRoot]}
     			@<ServiceRequest> OR 
     			@<SupplyRequest> OR 
     			@<Task> OR 
-    			@<VisionPrescription> ? }?;  # Activity that is intended to be 
+    			@<VisionPrescription> ?}?;  # Activity that is intended to be 
                                             # part of the care plan 
     fhir:plannedActivityDetail @<CarePlan.activity.plannedActivityDetail>?;  # In-line definition of activity
 }  
@@ -243,11 +243,11 @@ start=@<CarePlan> AND {fhir:nodeRole [fhir:treeRoot]}
     			 @<RelatedPerson> OR 
     			 @<Practitioner> OR 
     			 @<PractitionerRole> OR 
-    			 @<Organization> })  ?;  # Reported rather than primary record
+    			 @<Organization>?})  ?;  # Reported rather than primary record
     fhir:performer @<OneOrMore_Reference_CareTeam_OR_Device_OR_HealthcareService_OR_Organization_OR_Patient_OR_Practitioner_OR_PractitionerRole_OR_RelatedPerson>?;  # Who will be responsible?
     fhir:product @<CodeableConcept>  OR 
     			(@<Reference>  AND {fhir:link @<Medication> OR 
-    			 @<Substance> })  ?;  # What is to be administered/supplied
+    			 @<Substance>?})  ?;  # What is to be administered/supplied
     fhir:dailyAmount @<Quantity>?;          # How to consume/day?
     fhir:quantity @<Quantity>?;             # How much to 
                                             # administer/supply/consume 
